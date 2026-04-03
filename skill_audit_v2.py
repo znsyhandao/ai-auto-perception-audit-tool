@@ -202,7 +202,8 @@ def run_tool(tool_name, skill_path, check_only=False):
             cmd,
             capture_output=True,
             text=True,
-            encoding='utf-8'
+            encoding='gbk',  # Windows中文系统使用gbk
+            errors='replace'  # 遇到无法解码的字符时替换为�而不是崩溃
         )
         
         # 显示简要输出

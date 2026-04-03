@@ -257,6 +257,8 @@ except Exception as e:
                 [sys.executable, '-c', test_code],
                 capture_output=True,
                 text=True,
+                encoding='gbk',  # Windows中文系统使用gbk
+                errors='replace',  # 遇到无法解码的字符时替换为�而不是崩溃
                 timeout=30
             )
             
