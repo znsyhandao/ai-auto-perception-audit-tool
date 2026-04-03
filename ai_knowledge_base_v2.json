@@ -1,0 +1,63 @@
+{
+  "lessons": [
+    {
+      "id": "lesson_2026-04-03_0",
+      "title": "**版本号必须更新** - 每次重大改进都要更新版本号",
+      "content": "**版本号必须更新** - 每次重大改进都要更新版本号",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    },
+    {
+      "id": "lesson_2026-04-03_1",
+      "title": "**文件名版本一致** - ZIP文件名必须与技能版本一致 (skill-v1.1.0.zip)",
+      "content": "**文件名版本一致** - ZIP文件名必须与技能版本一致 (skill-v1.1.0.zip)",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    },
+    {
+      "id": "lesson_2026-04-03_2",
+      "title": "**100%英文要求** - ClawHub审核要求所有文件100%英文",
+      "content": "**100%英文要求** - ClawHub审核要求所有文件100%英文",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    },
+    {
+      "id": "lesson_2026-04-03_3",
+      "title": "**完整文档集** - 技能需要SKILL.md, README.md, CHANGELOG.md",
+      "content": "**完整文档集** - 技能需要SKILL.md, README.md, CHANGELOG.md",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    },
+    {
+      "id": "lesson_2026-04-03_4",
+      "title": "**功能测试必须** - 发布前必须测试所有命令",
+      "content": "**功能测试必须** - 发布前必须测试所有命令",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    },
+    {
+      "id": "lesson_2026-04-03_5",
+      "title": "**清理缓存文件** - 发布前必须清理__pycache__和.pyc文件",
+      "content": "**清理缓存文件** - 发布前必须清理__pycache__和.pyc文件",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    },
+    {
+      "id": "lesson_2026-04-03_6",
+      "title": "**安全验证** - 确保无危险函数，无网络访问",
+      "content": "**安全验证** - 确保无危险函数，无网络访问",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    },
+    {
+      "id": "lesson_2026-04-03_7",
+      "title": "**细节检查** - 检查所有文件名、版本引用和文档一致性",
+      "content": "**细节检查** - 检查所有文件名、版本引用和文档一致性",
+      "date": "2026-04-03",
+      "source": "memory_file"
+    }
+  ],
+  "patterns": [],
+  "upgrades": [],
+  "last_updated": "2026-04-03T11:21:13.047042"
+}
