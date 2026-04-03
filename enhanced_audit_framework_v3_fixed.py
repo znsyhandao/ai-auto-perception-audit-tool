@@ -9,6 +9,22 @@ import sys
 import json
 from pathlib import Path
 from datetime import datetime
+import subprocess
+
+
+# 在调用前设置
+env = os.environ.copy()
+env["PYTHONIOENCODING"] = "utf-8"
+env["PYTHONUTF8"] = "1"  # 强制Python使用UTF-8模式
+
+result = subprocess.run(
+    cmd,
+    capture_output=True,
+    text=True,
+    encoding='utf-8',
+    errors='strict',  # 严格模式，发现问题就报错而不是掩盖
+    env=env  # 传递环境变量
+)
 
 def main():
     """主函数"""

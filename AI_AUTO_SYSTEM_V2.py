@@ -117,7 +117,8 @@ def security_audit(skill_path):
             [sys.executable, "security_pattern_detector.py", skill_path],
             capture_output=True,
             text=True,
-            encoding='utf-8'
+            encoding='gbk',  # Windows中文系统使用gbk
+            errors='replace'  # 遇到无法解码的字符时替换为�而不是崩溃
         )
         
         print(result.stdout)
@@ -145,7 +146,8 @@ def audit_skill(skill_path):
             [sys.executable, "enhanced_audit_framework_v3_fixed.py", skill_path],
             capture_output=True,
             text=True,
-            encoding='utf-8'
+            encoding='gbk',  # Windows中文系统使用gbk
+            errors='replace'  # 遇到无法解码的字符时替换为�而不是崩溃
         )
         print(result.stdout[:500] + "..." if len(result.stdout) > 500 else result.stdout)
     except Exception as e:
@@ -162,7 +164,8 @@ def audit_skill(skill_path):
             [sys.executable, "pre_release_cleaner.py", skill_path],
             capture_output=True,
             text=True,
-            encoding='utf-8'
+            encoding='gbk',  # Windows中文系统使用gbk
+            errors='replace'  # 遇到无法解码的字符时替换为�而不是崩溃
         )
         print("✅ 发布前清理检查完成")
     except Exception as e:
