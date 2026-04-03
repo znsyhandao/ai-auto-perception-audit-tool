@@ -1,0 +1,435 @@
+{
+  "file": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py",
+  "analysis_time": "2026-03-30T13:24:01.188785",
+  "stats": {
+    "total_issues": 23,
+    "high_issues": 6,
+    "medium_issues": 16,
+    "low_issues": 1,
+    "tools_analyzed": 5,
+    "tools_failed": 0
+  },
+  "quality_assessment": {
+    "score": 0,
+    "level": "CRITICAL",
+    "recommendation": "Code quality is critical. Major security and performance issues found."
+  },
+  "summary": "[HIGH] 6 issues | [MEDIUM] 16 issues | [LOW] 1 issues",
+  "detailed_issues": [
+    {
+      "type": "DANGEROUS_IMPORT",
+      "message": "Dangerous import: sys - System operations (check usage)",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "third_party"
+    },
+    {
+      "type": "DANGEROUS_IMPORT",
+      "message": "Dangerous import: os - System operations (check usage)",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "third_party"
+    },
+    {
+      "type": "SECURITY_VULNERABILITY",
+      "message": "检测到危险函数调用: self.execute_command - 代码执行风险",
+      "line": 75,
+      "severity": "HIGH",
+      "tool": "ast"
+    },
+    {
+      "type": "SECURITY_VULNERABILITY",
+      "message": "检测到危险函数调用: open - 文件操作风险",
+      "line": 223,
+      "severity": "HIGH",
+      "tool": "ast"
+    },
+    {
+      "type": "SECURITY_VULNERABILITY",
+      "message": "检测到危险函数调用: open - 文件操作风险",
+      "line": 440,
+      "severity": "HIGH",
+      "tool": "ast"
+    },
+    {
+      "type": "SECURITY_VULNERABILITY",
+      "message": "检测到危险函数调用: skill.execute_command - 代码执行风险",
+      "line": 602,
+      "severity": "HIGH",
+      "tool": "ast"
+    },
+    {
+      "type": "NON_STDLIB_IMPORTS",
+      "message": "Found non-standard library imports: mne, mimetypes, numpy",
+      "line": 0,
+      "severity": "MEDIUM",
+      "tool": "third_party"
+    },
+    {
+      "type": "MISSING_IN_REQUIREMENTS",
+      "message": "Imports missing in requirements.txt: statistics, mne, mimetypes, numpy, pathlib",
+      "line": 0,
+      "severity": "MEDIUM",
+      "tool": "third_party"
+    },
+    {
+      "type": "POTENTIAL_UNVALIDATED_INPUT",
+      "message": "Input source mne.io.read_raw_edf may not be properly validated",
+      "line": 163,
+      "severity": "MEDIUM",
+      "tool": "data_flow"
+    },
+    {
+      "type": "MEMORY_INTENSIVE_OPERATION",
+      "message": "Memory-intensive operation: mne.io.read_raw_edf",
+      "line": 163,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "LIST_OPERATIONS_IN_LOOP",
+      "message": "List operations inside loop - may be O(n²) complexity",
+      "line": 177,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "POTENTIAL_UNVALIDATED_INPUT",
+      "message": "Input source f.read.strip may not be properly validated",
+      "line": 224,
+      "severity": "MEDIUM",
+      "tool": "data_flow"
+    },
+    {
+      "type": "POTENTIAL_UNVALIDATED_INPUT",
+      "message": "Input source f.read may not be properly validated",
+      "line": 224,
+      "severity": "MEDIUM",
+      "tool": "data_flow"
+    },
+    {
+      "type": "MEMORY_INTENSIVE_OPERATION",
+      "message": "Memory-intensive operation: f.read.strip",
+      "line": 224,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "MEMORY_INTENSIVE_OPERATION",
+      "message": "Memory-intensive operation: f.read",
+      "line": 224,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "POTENTIAL_UNVALIDATED_INPUT",
+      "message": "Input source f.read may not be properly validated",
+      "line": 442,
+      "severity": "MEDIUM",
+      "tool": "data_flow"
+    },
+    {
+      "type": "MEMORY_INTENSIVE_OPERATION",
+      "message": "Memory-intensive operation: f.read",
+      "line": 442,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "NESTED_DATA_ACCESS",
+      "message": "Nested data structure access inside loop - may be O(n²) or worse",
+      "line": 486,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "LIST_OPERATIONS_IN_LOOP",
+      "message": "List operations inside loop - may be O(n²) complexity",
+      "line": 526,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "WHILE_LOOP_COMPLEXITY",
+      "message": "While loop - ensure termination condition and complexity",
+      "line": 558,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "MEMORY_INTENSIVE_OPERATION",
+      "message": "Memory-intensive operation: json.dumps",
+      "line": 596,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "MEMORY_INTENSIVE_OPERATION",
+      "message": "Memory-intensive operation: json.dumps",
+      "line": 603,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "UNUSED_REQUIREMENT",
+      "message": "Requirements not used in code: 3, git, if, complete, cd, 1, pip, python, 4, 2, install, this, -",
+      "line": 0,
+      "severity": "LOW",
+      "tool": "third_party"
+    }
+  ],
+  "tool_reports": {
+    "ast": {
+      "file": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py",
+      "stats": {
+        "total": 4,
+        "high": 4,
+        "medium": 0,
+        "low": 0,
+        "by_type": {
+          "SECURITY_VULNERABILITY": 4
+        }
+      },
+      "issues": [
+        {
+          "type": "SECURITY_VULNERABILITY",
+          "message": "检测到危险函数调用: self.execute_command - 代码执行风险",
+          "line": 75,
+          "severity": "HIGH",
+          "tool": "ast"
+        },
+        {
+          "type": "SECURITY_VULNERABILITY",
+          "message": "检测到危险函数调用: open - 文件操作风险",
+          "line": 223,
+          "severity": "HIGH",
+          "tool": "ast"
+        },
+        {
+          "type": "SECURITY_VULNERABILITY",
+          "message": "检测到危险函数调用: open - 文件操作风险",
+          "line": 440,
+          "severity": "HIGH",
+          "tool": "ast"
+        },
+        {
+          "type": "SECURITY_VULNERABILITY",
+          "message": "检测到危险函数调用: skill.execute_command - 代码执行风险",
+          "line": 602,
+          "severity": "HIGH",
+          "tool": "ast"
+        }
+      ],
+      "summary": "[HIGH] Found 4 high-risk issues"
+    },
+    "control_flow": {
+      "file": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py",
+      "stats": {
+        "total": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "by_type": {}
+      },
+      "issues": [],
+      "summary": "[PASS] Control flow analysis passed, no serious issues found"
+    },
+    "third_party": {
+      "file": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py",
+      "imports": [
+        "statistics",
+        "mne",
+        "json",
+        "math",
+        "mimetypes",
+        "numpy",
+        "pathlib",
+        "sys",
+        "datetime",
+        "os",
+        "typing"
+      ],
+      "stats": {
+        "total": 5,
+        "high": 2,
+        "medium": 2,
+        "low": 1,
+        "by_type": {
+          "NON_STDLIB_IMPORTS": 1,
+          "DANGEROUS_IMPORT": 2,
+          "MISSING_IN_REQUIREMENTS": 1,
+          "UNUSED_REQUIREMENT": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "NON_STDLIB_IMPORTS",
+          "message": "Found non-standard library imports: mne, mimetypes, numpy",
+          "line": 0,
+          "severity": "MEDIUM",
+          "tool": "third_party"
+        },
+        {
+          "type": "DANGEROUS_IMPORT",
+          "message": "Dangerous import: sys - System operations (check usage)",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "third_party"
+        },
+        {
+          "type": "DANGEROUS_IMPORT",
+          "message": "Dangerous import: os - System operations (check usage)",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "third_party"
+        },
+        {
+          "type": "MISSING_IN_REQUIREMENTS",
+          "message": "Imports missing in requirements.txt: statistics, mne, mimetypes, numpy, pathlib",
+          "line": 0,
+          "severity": "MEDIUM",
+          "tool": "third_party"
+        },
+        {
+          "type": "UNUSED_REQUIREMENT",
+          "message": "Requirements not used in code: 3, git, if, complete, cd, 1, pip, python, 4, 2, install, this, -",
+          "line": 0,
+          "severity": "LOW",
+          "tool": "third_party"
+        }
+      ],
+      "summary": "[HIGH] Found 2 high-risk library issues | [MEDIUM] Found 2 medium-risk library issues | [LOW] Found 1 low-risk library issues"
+    },
+    "data_flow": {
+      "file": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py",
+      "stats": {
+        "total": 4,
+        "high": 0,
+        "medium": 4,
+        "low": 0,
+        "by_type": {
+          "POTENTIAL_UNVALIDATED_INPUT": 4
+        }
+      },
+      "issues": [
+        {
+          "type": "POTENTIAL_UNVALIDATED_INPUT",
+          "message": "Input source mne.io.read_raw_edf may not be properly validated",
+          "line": 163,
+          "severity": "MEDIUM",
+          "tool": "data_flow"
+        },
+        {
+          "type": "POTENTIAL_UNVALIDATED_INPUT",
+          "message": "Input source f.read.strip may not be properly validated",
+          "line": 224,
+          "severity": "MEDIUM",
+          "tool": "data_flow"
+        },
+        {
+          "type": "POTENTIAL_UNVALIDATED_INPUT",
+          "message": "Input source f.read may not be properly validated",
+          "line": 224,
+          "severity": "MEDIUM",
+          "tool": "data_flow"
+        },
+        {
+          "type": "POTENTIAL_UNVALIDATED_INPUT",
+          "message": "Input source f.read may not be properly validated",
+          "line": 442,
+          "severity": "MEDIUM",
+          "tool": "data_flow"
+        }
+      ],
+      "summary": "[MEDIUM] Found 4 medium-risk data flow issues"
+    },
+    "performance": {
+      "file": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py",
+      "stats": {
+        "total": 10,
+        "high": 0,
+        "medium": 10,
+        "low": 0,
+        "by_type": {
+          "LIST_OPERATIONS_IN_LOOP": 2,
+          "MEMORY_INTENSIVE_OPERATION": 6,
+          "NESTED_DATA_ACCESS": 1,
+          "WHILE_LOOP_COMPLEXITY": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "LIST_OPERATIONS_IN_LOOP",
+          "message": "List operations inside loop - may be O(n²) complexity",
+          "line": 177,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "LIST_OPERATIONS_IN_LOOP",
+          "message": "List operations inside loop - may be O(n²) complexity",
+          "line": 526,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "MEMORY_INTENSIVE_OPERATION",
+          "message": "Memory-intensive operation: mne.io.read_raw_edf",
+          "line": 163,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "MEMORY_INTENSIVE_OPERATION",
+          "message": "Memory-intensive operation: f.read.strip",
+          "line": 224,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "MEMORY_INTENSIVE_OPERATION",
+          "message": "Memory-intensive operation: f.read",
+          "line": 224,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "MEMORY_INTENSIVE_OPERATION",
+          "message": "Memory-intensive operation: f.read",
+          "line": 442,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "MEMORY_INTENSIVE_OPERATION",
+          "message": "Memory-intensive operation: json.dumps",
+          "line": 596,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "MEMORY_INTENSIVE_OPERATION",
+          "message": "Memory-intensive operation: json.dumps",
+          "line": 603,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "NESTED_DATA_ACCESS",
+          "message": "Nested data structure access inside loop - may be O(n²) or worse",
+          "line": 486,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        },
+        {
+          "type": "WHILE_LOOP_COMPLEXITY",
+          "message": "While loop - ensure termination condition and complexity",
+          "line": 558,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        }
+      ],
+      "summary": "[MEDIUM] Found 10 medium-risk performance issues"
+    }
+  }
+}

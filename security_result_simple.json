@@ -1,0 +1,34 @@
+{
+  "skill_id": "aisleepgen_v1.0.7",
+  "security_score": 84.0,
+  "risk_level": "low",
+  "threats": [
+    {
+      "type": "file_operations",
+      "pattern": "open(",
+      "line": 229,
+      "filename": "skill.py",
+      "code_snippet": "with open(hr_data, 'r') as f:",
+      "severity": "medium",
+      "confidence": "medium"
+    },
+    {
+      "type": "file_operations",
+      "pattern": "open(",
+      "line": 452,
+      "filename": "skill.py",
+      "code_snippet": "with open(file_path, 'rb') as f:",
+      "severity": "medium",
+      "confidence": "medium"
+    }
+  ],
+  "vulnerabilities": [],
+  "recommendations": [
+    "Implement proper file access controls and validation"
+  ],
+  "metadata": {
+    "files_scanned": 3,
+    "patterns_found": 2
+  },
+  "timestamp": "2026-03-30T16:55:51.722641"
+}

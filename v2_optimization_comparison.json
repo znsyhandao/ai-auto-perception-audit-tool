@@ -1,0 +1,81 @@
+{
+  "comparison_time": "2026-03-31T10:04:00Z",
+  "versions": {
+    "v1.0.9_optimized": {
+      "path": "D:/openclaw/releases/AISleepGen/v1.0.9_optimized",
+      "metrics": {
+        "total_dependencies": 60,
+        "module_count": 5,
+        "dependency_types": {
+          "import_statement": 21,
+          "method_call": 11,
+          "attribute_access": 23,
+          "class_inheritance": 5
+        },
+        "weighted_dependencies": {
+          "import_statement": 42.0,
+          "method_call": 16.5,
+          "attribute_access": 23.0,
+          "class_inheritance": 15.0
+        },
+        "total_weight": 96.5,
+        "weighted_density": 3.86,
+        "estimated_confidence": 1.0,
+        "current_audit_confidence": 0.7,
+        "confidence_gap": 0.30000000000000004,
+        "optimization_target": 0.85
+      }
+    },
+    "v2.0_targeted": {
+      "path": "D:/openclaw/releases/AISleepGen/v2.0_targeted",
+      "metrics": {
+        "total_dependencies": 45,
+        "module_count": 5,
+        "dependency_types": {
+          "import_statement": 9,
+          "method_call": 11,
+          "attribute_access": 23,
+          "class_inheritance": 2
+        },
+        "weighted_dependencies": {
+          "import_statement": 18.0,
+          "method_call": 16.5,
+          "attribute_access": 23.0,
+          "class_inheritance": 6.0
+        },
+        "total_weight": 63.5,
+        "weighted_density": 2.54,
+        "estimated_confidence": 1.0,
+        "current_audit_confidence": 0.7,
+        "confidence_gap": 0.30000000000000004,
+        "optimization_target": 0.85
+      }
+    }
+  },
+  "differences": {
+    "total_dependencies": {
+      "v1": 60,
+      "v2": 45,
+      "difference": -15,
+      "percentage": -25.0
+    },
+    "weighted_density": {
+      "v1": 3.86,
+      "v2": 2.54,
+      "difference": -1.3199999999999998,
+      "percentage": -34.196891191709845
+    },
+    "estimated_confidence": {
+      "v1": 1.0,
+      "v2": 1.0,
+      "difference": 0.0
+    }
+  },
+  "optimization_effectiveness": {
+    "import_statement_reduction": 12,
+    "class_inheritance_reduction": 3,
+    "attribute_access_reduction": 0,
+    "method_call_reduction": 0
+  },
+  "principles_validation": "基于理解的优化验证 - 先理解依赖检测，再针对性优化"
+}

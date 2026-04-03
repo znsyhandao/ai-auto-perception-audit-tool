@@ -1,0 +1,35 @@
+{
+  "skill_id": "aisleepgen_v1.0.7_fixed",
+  "passed": true,
+  "score": 100.0,
+  "issues": [
+    {
+      "type": "missing_skill_component",
+      "component": "Skill class definition",
+      "severity": "critical",
+      "message": "Missing required component in skill.py: Skill class definition"
+    }
+  ],
+  "warnings": [],
+  "recommendations": [
+    "Ensure all version numbers are consistent across files",
+    "Add comprehensive documentation in SKILL.md",
+    "Test skill functionality thoroughly",
+    "Review security declarations in config.yaml"
+  ],
+  "metadata": {
+    "config": {
+      "version": "1.0.7",
+      "name": "Sleep Rabbit Sleep Health"
+    },
+    "package": {
+      "name": "sleep-rabbit-skill",
+      "version": "1.0.7"
+    },
+    "skill_py": {
+      "size": 24598,
+      "hash": "607ac9c2db9babb7"
+    }
+  },
+  "timestamp": "2026-03-30T16:58:36.380697"
+}

@@ -1,0 +1,13 @@
+{
+  "audit_time": "2026-03-31 10:49:19",
+  "skill_version": "v2.0_release",
+  "overall_score": 79.95,
+  "certificate_count": 4,
+  "matrix_confidence": 0.7,
+  "v1_matrix_confidence": 0.7,
+  "improvement": 0.0,
+  "target_confidence": 0.85,
+  "target_achieved": false,
+  "audit_duration_ms": 0,
+  "validity_rate": 0
+}

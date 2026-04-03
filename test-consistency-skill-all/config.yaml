@@ -1,0 +1,11 @@
+name: "test-skill"
+version: "1.0.0"
+description: "A test skill with all consistency issues we faced today"
+runtime_network_access: false
+security:
+  claims:
+    - "No religious content"
+    - "100% local execution"
+tags:
+  - "secular"
+  - "non-religious"

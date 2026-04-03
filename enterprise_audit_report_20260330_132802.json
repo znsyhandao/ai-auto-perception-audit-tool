@@ -1,0 +1,372 @@
+{
+  "scan_id": "SCAN-20260330132759",
+  "start_time": "2026-03-30T13:27:59.593991",
+  "skill_path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed",
+  "modules": {
+    "ai_analysis": {
+      "malware_detections": [
+        {
+          "type": "obfuscated_code",
+          "pattern": "__import__",
+          "risk": "high"
+        },
+        {
+          "type": "persistence",
+          "pattern": "schedule",
+          "risk": "medium"
+        },
+        {
+          "type": "persistence",
+          "pattern": "registry",
+          "risk": "medium"
+        }
+      ],
+      "quality_score": 0.9118192582927774,
+      "quality_level": "good",
+      "ai_recommendations": [
+        "建议添加更多注释",
+        "考虑重构复杂函数",
+        "增加单元测试覆盖率"
+      ],
+      "anomaly_score": 0.30000000000000004
+    },
+    "sandbox_execution": {
+      "execution_success": true,
+      "exit_code": 0,
+      "execution_time": 1.2,
+      "behaviors_monitored": [
+        {
+          "type": "file_read",
+          "path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed/skill.py",
+          "allowed": true
+        },
+        {
+          "type": "network_attempt",
+          "destination": "api.example.com",
+          "blocked": true
+        },
+        {
+          "type": "process_spawn",
+          "command": "python",
+          "allowed": true
+        },
+        {
+          "type": "file_write",
+          "path": "/tmp/test.txt",
+          "blocked": true
+        }
+      ],
+      "policy_violations": [
+        {
+          "policy_id": "FS_WRITE_BLOCKED",
+          "description": "文件写入被阻止",
+          "severity": "medium",
+          "evidence": "{'type': 'network_attempt', 'destination': 'api.example.com', 'blocked': True}"
+        },
+        {
+          "policy_id": "FS_WRITE_BLOCKED",
+          "description": "文件写入被阻止",
+          "severity": "medium",
+          "evidence": "{'type': 'file_write', 'path': '/tmp/test.txt', 'blocked': True}"
+        }
+      ],
+      "security_score": 60
+    },
+    "supply_chain": {
+      "dependencies_found": 3,
+      "direct_dependencies": [
+        "requests",
+        "pandas"
+      ],
+      "transitive_dependencies": [
+        "numpy"
+      ],
+      "vulnerabilities_found": 2,
+      "critical_vulnerabilities": 1,
+      "license_issues": [
+        "numpy: 许可证BSD-3-Clause可能限制商业使用",
+        "pandas: 许可证BSD-3-Clause可能限制商业使用"
+      ],
+      "supply_chain_risks": [
+        {
+          "dependency": "requests",
+          "risk": "已知漏洞",
+          "vulnerabilities": [
+            "CVE-2023-12345"
+          ]
+        },
+        {
+          "dependency": "numpy",
+          "risk": "已知漏洞",
+          "vulnerabilities": [
+            "CVE-2023-54321"
+          ]
+        }
+      ],
+      "dependency_graph": {
+        "nodes": [
+          {
+            "id": "requests",
+            "type": "direct"
+          },
+          {
+            "id": "numpy",
+            "type": "transitive"
+          },
+          {
+            "id": "pandas",
+            "type": "direct"
+          }
+        ],
+        "edges": [
+          {
+            "source": "skill",
+            "target": "requests"
+          },
+          {
+            "source": "skill",
+            "target": "pandas"
+          },
+          {
+            "source": "pandas",
+            "target": "numpy"
+          }
+        ]
+      }
+    },
+    "compliance": {
+      "compliance_results": {
+        "GDPR": {
+          "standard": "GDPR",
+          "passed": true,
+          "requirements_checked": [
+            "数据最小化原则",
+            "用户同意要求",
+            "数据访问权限",
+            "数据删除权",
+            "数据可移植性"
+          ],
+          "violations": [],
+          "recommendations": []
+        },
+        "SOC2": {
+          "standard": "SOC2",
+          "passed": true,
+          "requirements_checked": [
+            "安全策略和程序",
+            "访问控制",
+            "系统监控",
+            "变更管理",
+            "风险评估"
+          ],
+          "violations": [],
+          "recommendations": []
+        }
+      },
+      "overall_compliance": true,
+      "compliance_score": 100.0,
+      "certificate_id": "CERT-20260330-5726"
+    }
+  },
+  "end_time": "2026-03-30T13:28:02.497871",
+  "execution_time": 2.9038798809051514,
+  "risk_assessment": {
+    "risk_score": 80,
+    "risk_level": "CRITICAL",
+    "risk_factors": [
+      "AI检测到3个恶意模式",
+      "沙箱检测到2个策略违规",
+      "供应链发现1个严重漏洞"
+    ],
+    "recommendation": "拒绝发布"
+  },
+  "report": {
+    "executive_summary": {
+      "overall_status": "FAIL",
+      "risk_level": "CRITICAL",
+      "recommendation": "拒绝发布",
+      "key_findings": [
+        "AI检测到3个恶意模式",
+        "沙箱检测到2个策略违规",
+        "供应链发现1个严重漏洞"
+      ]
+    },
+    "detailed_findings": {
+      "ai_analysis": {
+        "malware_detections": [
+          {
+            "type": "obfuscated_code",
+            "pattern": "__import__",
+            "risk": "high"
+          },
+          {
+            "type": "persistence",
+            "pattern": "schedule",
+            "risk": "medium"
+          },
+          {
+            "type": "persistence",
+            "pattern": "registry",
+            "risk": "medium"
+          }
+        ],
+        "quality_score": 0.9118192582927774,
+        "quality_level": "good",
+        "ai_recommendations": [
+          "建议添加更多注释",
+          "考虑重构复杂函数",
+          "增加单元测试覆盖率"
+        ],
+        "anomaly_score": 0.30000000000000004
+      },
+      "sandbox_execution": {
+        "execution_success": true,
+        "exit_code": 0,
+        "execution_time": 1.2,
+        "behaviors_monitored": [
+          {
+            "type": "file_read",
+            "path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed/skill.py",
+            "allowed": true
+          },
+          {
+            "type": "network_attempt",
+            "destination": "api.example.com",
+            "blocked": true
+          },
+          {
+            "type": "process_spawn",
+            "command": "python",
+            "allowed": true
+          },
+          {
+            "type": "file_write",
+            "path": "/tmp/test.txt",
+            "blocked": true
+          }
+        ],
+        "policy_violations": [
+          {
+            "policy_id": "FS_WRITE_BLOCKED",
+            "description": "文件写入被阻止",
+            "severity": "medium",
+            "evidence": "{'type': 'network_attempt', 'destination': 'api.example.com', 'blocked': True}"
+          },
+          {
+            "policy_id": "FS_WRITE_BLOCKED",
+            "description": "文件写入被阻止",
+            "severity": "medium",
+            "evidence": "{'type': 'file_write', 'path': '/tmp/test.txt', 'blocked': True}"
+          }
+        ],
+        "security_score": 60
+      },
+      "supply_chain": {
+        "dependencies_found": 3,
+        "direct_dependencies": [
+          "requests",
+          "pandas"
+        ],
+        "transitive_dependencies": [
+          "numpy"
+        ],
+        "vulnerabilities_found": 2,
+        "critical_vulnerabilities": 1,
+        "license_issues": [
+          "numpy: 许可证BSD-3-Clause可能限制商业使用",
+          "pandas: 许可证BSD-3-Clause可能限制商业使用"
+        ],
+        "supply_chain_risks": [
+          {
+            "dependency": "requests",
+            "risk": "已知漏洞",
+            "vulnerabilities": [
+              "CVE-2023-12345"
+            ]
+          },
+          {
+            "dependency": "numpy",
+            "risk": "已知漏洞",
+            "vulnerabilities": [
+              "CVE-2023-54321"
+            ]
+          }
+        ],
+        "dependency_graph": {
+          "nodes": [
+            {
+              "id": "requests",
+              "type": "direct"
+            },
+            {
+              "id": "numpy",
+              "type": "transitive"
+            },
+            {
+              "id": "pandas",
+              "type": "direct"
+            }
+          ],
+          "edges": [
+            {
+              "source": "skill",
+              "target": "requests"
+            },
+            {
+              "source": "skill",
+              "target": "pandas"
+            },
+            {
+              "source": "pandas",
+              "target": "numpy"
+            }
+          ]
+        }
+      },
+      "compliance": {
+        "compliance_results": {
+          "GDPR": {
+            "standard": "GDPR",
+            "passed": true,
+            "requirements_checked": [
+              "数据最小化原则",
+              "用户同意要求",
+              "数据访问权限",
+              "数据删除权",
+              "数据可移植性"
+            ],
+            "violations": [],
+            "recommendations": []
+          },
+          "SOC2": {
+            "standard": "SOC2",
+            "passed": true,
+            "requirements_checked": [
+              "安全策略和程序",
+              "访问控制",
+              "系统监控",
+              "变更管理",
+              "风险评估"
+            ],
+            "violations": [],
+            "recommendations": []
+          }
+        },
+        "overall_compliance": true,
+        "compliance_score": 100.0,
+        "certificate_id": "CERT-20260330-5726"
+      }
+    },
+    "metrics": {
+      "total_checks": 4,
+      "checks_passed": 3,
+      "execution_time": 2.9038798809051514,
+      "files_analyzed": 1
+    },
+    "certification": {
+      "eligible": false,
+      "certificate_id": "CERT-20260330-5726",
+      "valid_until": null
+    }
+  }
+}

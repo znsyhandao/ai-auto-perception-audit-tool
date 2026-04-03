@@ -1,0 +1,39 @@
+{
+  "core_principle": "\u7406\u89e3\u4f18\u5148\u4e8e\u901a\u8fc7",
+  "algorithm_understanding": "confidence = 0.6 + (dependency_density \u00d7 0.4)",
+  "optimization_goal": "Improve actual architecture quality while understanding algorithm limitations",
+  "two_track_approach": {
+    "track_1": {
+      "name": "Algorithm-aware optimization",
+      "goal": "Optimize for algorithm detection",
+      "methods": [
+        "Reduce dependency count",
+        "Optimize dependency density",
+        "Ensure improvements are mathematically detectable"
+      ],
+      "target_metrics": {
+        "dependency_reduction": "30%",
+        "density_target": 0.03,
+        "confidence_target": 0.612
+      }
+    },
+    "track_2": {
+      "name": "Architecture-quality optimization",
+      "goal": "Improve actual architecture quality",
+      "methods": [
+        "Enhance interface clarity",
+        "Improve dependency direction",
+        "Strengthen module cohesion",
+        "Establish clear hierarchical structure"
+      ],
+      "target_metrics": {
+        "interface_quality": "excellent",
+        "dependency_direction": "unidirectional",
+        "cohesion_score": "high",
+        "hierarchy_clarity": "clear"
+      }
+    }
+  },
+  "key_insight": "Track 1 improvements may not align with Track 2 (low density \u2260 high quality)",
+  "transparency_requirement": "Document both tracks and their relationship"
+}

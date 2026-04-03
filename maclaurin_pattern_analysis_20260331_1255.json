@@ -1,0 +1,428 @@
+{
+  "total_files": 22,
+  "total_functions": 35,
+  "function_patterns": [
+    {
+      "file": "skill.py",
+      "function": "create_skill",
+      "lines": 3,
+      "complexity": {
+        "parameter_count": 0,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "skill.py",
+      "function": "__init__",
+      "lines": 18,
+      "complexity": {
+        "parameter_count": 5,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "skill.py",
+      "function": "_initialize_dependencies",
+      "lines": 16,
+      "complexity": {
+        "parameter_count": 1,
+        "nested_depth": 2,
+        "branch_count": 3,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "skill.py",
+      "function": "analyze_sleep",
+      "lines": 24,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 1,
+        "branch_count": 2,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "skill.py",
+      "function": "check_environment",
+      "lines": 8,
+      "complexity": {
+        "parameter_count": 1,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "skill.py",
+      "function": "get_module_info",
+      "lines": 9,
+      "complexity": {
+        "parameter_count": 1,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "data\\data_processor.py",
+      "function": "validate_edf_file",
+      "lines": 13,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 3,
+        "branch_count": 4,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "data\\data_processor.py",
+      "function": "validate_json_data",
+      "lines": 10,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 2,
+        "branch_count": 3,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "data\\data_processor.py",
+      "function": "read_text_file",
+      "lines": 5,
+      "complexity": {
+        "parameter_count": 3,
+        "nested_depth": 2,
+        "branch_count": 1,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "data\\data_processor.py",
+      "function": "read_json_file",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "data\\data_processor.py",
+      "function": "calculate_basic_stats",
+      "lines": 11,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 1,
+        "branch_count": 1,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "data\\data_processor.py",
+      "function": "calculate_hrv_metrics",
+      "lines": 10,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 1,
+        "branch_count": 1,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "utils\\utilities.py",
+      "function": "setup_logger",
+      "lines": 8,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 1,
+        "branch_count": 1,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "utils\\utilities.py",
+      "function": "__init__",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "utils\\utilities.py",
+      "function": "load_config",
+      "lines": 4,
+      "complexity": {
+        "parameter_count": 1,
+        "nested_depth": 2,
+        "branch_count": 1,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "utils\\utilities.py",
+      "function": "get",
+      "lines": 1,
+      "complexity": {
+        "parameter_count": 3,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "utils\\utilities.py",
+      "function": "validate_path",
+      "lines": 11,
+      "complexity": {
+        "parameter_count": 3,
+        "nested_depth": 3,
+        "branch_count": 2,
+        "loop_count": 1,
+        "recursive": false
+      }
+    },
+    {
+      "file": "utils\\utilities.py",
+      "function": "validate_input",
+      "lines": 9,
+      "complexity": {
+        "parameter_count": 3,
+        "nested_depth": 2,
+        "branch_count": 3,
+        "loop_count": 1,
+        "recursive": false
+      }
+    },
+    {
+      "file": "reporting\\formatter\\formatter.py",
+      "function": "placeholder",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 0,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "reporting\\generator\\generator.py",
+      "function": "placeholder",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 0,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\sleep\\sleep_interfaces.py",
+      "function": "analyze",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\sleep\\sleep_interfaces.py",
+      "function": "get_sleep_stages",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\sleep\\sleep_interfaces.py",
+      "function": "calculate_quality",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\sleep\\sleep_interfaces.py",
+      "function": "stage_sleep",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\sleep\\sleep_interfaces.py",
+      "function": "validate_stages",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\stress\\stress_interfaces.py",
+      "function": "assess",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\stress\\stress_interfaces.py",
+      "function": "calculate_hrv",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "interfaces\\stress\\stress_interfaces.py",
+      "function": "interpret_stress_level",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "core\\meditation_techniques\\techniques.py",
+      "function": "placeholder",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 0,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "core\\sleep_scorer\\scorer.py",
+      "function": "analyze",
+      "lines": 6,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "core\\sleep_scorer\\scorer.py",
+      "function": "get_sleep_stages",
+      "lines": 8,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "core\\sleep_scorer\\scorer.py",
+      "function": "calculate_quality",
+      "lines": 12,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "core\\sleep_stager\\stager.py",
+      "function": "stage_sleep",
+      "lines": 8,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "core\\sleep_stager\\stager.py",
+      "function": "validate_stages",
+      "lines": 3,
+      "complexity": {
+        "parameter_count": 2,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    },
+    {
+      "file": "core\\stress_analyzer\\analyzer.py",
+      "function": "placeholder",
+      "lines": 2,
+      "complexity": {
+        "parameter_count": 0,
+        "nested_depth": 0,
+        "branch_count": 0,
+        "loop_count": 0,
+        "recursive": false
+      }
+    }
+  ],
+  "complexity_metrics": {},
+  "regularity_issues": []
+}

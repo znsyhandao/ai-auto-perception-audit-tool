@@ -1,0 +1,15 @@
+{
+  "version": "v1.0.9_optimized",
+  "module_count": 16,
+  "estimated_dependencies": 11,
+  "calculated_density": 0.043,
+  "calculated_confidence": 0.617,
+  "mathematical_audit_confidence": 0.7,
+  "discrepancy": "\u7b97\u6cd5\u8ba1\u7b970.617\uff0c\u5ba1\u6838\u663e\u793a0.700\uff0c\u53ef\u80fd\u6709\u5176\u4ed6\u8c03\u6574\u56e0\u7d20",
+  "architecture_quality_indicators": {
+    "interface_definition": "good",
+    "dependency_injection": "good",
+    "module_cohesion": "good",
+    "hierarchical_structure": "good"
+  }
+}

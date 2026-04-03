@@ -1,0 +1,168 @@
+{
+  "file": "./test_suite_data\\complex.py",
+  "analysis_time": "2026-03-30T11:25:45.507130",
+  "stats": {
+    "total_issues": 5,
+    "high_issues": 3,
+    "medium_issues": 1,
+    "low_issues": 1,
+    "tools_analyzed": 5,
+    "tools_failed": 0
+  },
+  "quality_assessment": {
+    "score": 63,
+    "level": "FAIR",
+    "recommendation": "Code quality is fair. Consider addressing the identified issues."
+  },
+  "summary": "[HIGH] 3 issues | [MEDIUM] 1 issues | [LOW] 1 issues",
+  "detailed_issues": [
+    {
+      "type": "DANGEROUS_IMPORT",
+      "message": "Dangerous import: os - System operations (check usage)",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "third_party"
+    },
+    {
+      "type": "DANGEROUS_IMPORT",
+      "message": "Dangerous import: sys - System operations (check usage)",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "third_party"
+    },
+    {
+      "type": "SECURITY_VULNERABILITY",
+      "message": "检测到危险函数调用: open - 文件操作风险",
+      "line": 32,
+      "severity": "HIGH",
+      "tool": "ast"
+    },
+    {
+      "type": "MEMORY_INTENSIVE_OPERATION",
+      "message": "Memory-intensive operation: json.dump",
+      "line": 33,
+      "severity": "MEDIUM",
+      "tool": "performance"
+    },
+    {
+      "type": "UNUSED_REQUIREMENT",
+      "message": "Requirements not used in code: numpy, scikit-learn, pandas, requests",
+      "line": 0,
+      "severity": "LOW",
+      "tool": "third_party"
+    }
+  ],
+  "tool_reports": {
+    "ast": {
+      "file": "./test_suite_data\\complex.py",
+      "stats": {
+        "total": 1,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "by_type": {
+          "SECURITY_VULNERABILITY": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "SECURITY_VULNERABILITY",
+          "message": "检测到危险函数调用: open - 文件操作风险",
+          "line": 32,
+          "severity": "HIGH",
+          "tool": "ast"
+        }
+      ],
+      "summary": "[HIGH] Found 1 high-risk issues"
+    },
+    "control_flow": {
+      "file": "./test_suite_data\\complex.py",
+      "stats": {
+        "total": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "by_type": {}
+      },
+      "issues": [],
+      "summary": "[PASS] Control flow analysis passed, no serious issues found"
+    },
+    "third_party": {
+      "file": "./test_suite_data\\complex.py",
+      "imports": [
+        "typing",
+        "os",
+        "sys",
+        "json"
+      ],
+      "stats": {
+        "total": 3,
+        "high": 2,
+        "medium": 0,
+        "low": 1,
+        "by_type": {
+          "DANGEROUS_IMPORT": 2,
+          "UNUSED_REQUIREMENT": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "DANGEROUS_IMPORT",
+          "message": "Dangerous import: os - System operations (check usage)",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "third_party"
+        },
+        {
+          "type": "DANGEROUS_IMPORT",
+          "message": "Dangerous import: sys - System operations (check usage)",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "third_party"
+        },
+        {
+          "type": "UNUSED_REQUIREMENT",
+          "message": "Requirements not used in code: numpy, scikit-learn, pandas, requests",
+          "line": 0,
+          "severity": "LOW",
+          "tool": "third_party"
+        }
+      ],
+      "summary": "[HIGH] Found 2 high-risk library issues | [LOW] Found 1 low-risk library issues"
+    },
+    "data_flow": {
+      "file": "./test_suite_data\\complex.py",
+      "stats": {
+        "total": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "by_type": {}
+      },
+      "issues": [],
+      "summary": "[PASS] Data flow analysis passed, no serious issues found"
+    },
+    "performance": {
+      "file": "./test_suite_data\\complex.py",
+      "stats": {
+        "total": 1,
+        "high": 0,
+        "medium": 1,
+        "low": 0,
+        "by_type": {
+          "MEMORY_INTENSIVE_OPERATION": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "MEMORY_INTENSIVE_OPERATION",
+          "message": "Memory-intensive operation: json.dump",
+          "line": 33,
+          "severity": "MEDIUM",
+          "tool": "performance"
+        }
+      ],
+      "summary": "[MEDIUM] Found 1 medium-risk performance issues"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "service": {
+    "name": "mathematical-audit-service",
+    "version": "4.0.0",
+    "port": 8010,
+    "log_level": "INFO"
+  },
+  "mathematical": {
+    "engine": "MathematicalAIEngineFinal",
+    "methods": [
+      "maclaurin",
+      "taylor",
+      "fourier",
+      "matrix",
+      "proof"
+    ],
+    "default_depth": 5
+  },
+  "deployment": {
+    "docker_image": "mathematical-audit:latest",
+    "health_check": "/health",
+    "restart_policy": "always"
+  }
+}

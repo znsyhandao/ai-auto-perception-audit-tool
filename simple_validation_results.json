@@ -1,0 +1,30 @@
+[
+  {
+    "name": "ideal_architecture",
+    "modules": 5,
+    "dependencies": 5,
+    "density": 0.2,
+    "confidence": 0.6799999999999999
+  },
+  {
+    "name": "chaotic_architecture",
+    "modules": 5,
+    "dependencies": 20,
+    "density": 0.8,
+    "confidence": 0.92
+  },
+  {
+    "name": "aisleepgen_current",
+    "modules": 16,
+    "dependencies": 11,
+    "density": 0.04296875,
+    "confidence": 0.6171875
+  },
+  {
+    "name": "aisleepgen_target",
+    "modules": 16,
+    "dependencies": 8,
+    "density": 0.03125,
+    "confidence": 0.6124999999999999
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "skill_id": "aisleepgen_v1.0.7",
+  "skill_path": "D:/openclaw/releases/AISleepGen/v1.0.7_fixed",
+  "audit_types": [
+    "maclaurin",
+    "taylor",
+    "fourier",
+    "matrix",
+    "proof"
+  ],
+  "mathematical_depth": 5,
+  "minimum_score": 75.0,
+  "minimum_certificates": 3
+}

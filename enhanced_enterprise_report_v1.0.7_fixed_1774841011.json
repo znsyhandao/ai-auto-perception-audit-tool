@@ -1,0 +1,35 @@
+{
+  "scan_id": "ENHANCED-SCAN-v1.0.7_fixed-1774841011.3672261",
+  "skill_path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed",
+  "scan_time": 1774841011.3672261,
+  "v2_analysis": {
+    "ast_analysis": {
+      "success": false,
+      "error": "'NoneType' object is not subscriptable",
+      "exit_code": -1
+    },
+    "deep_analysis_suite": {
+      "success": true,
+      "exit_code": 1,
+      "json_output": null,
+      "stdout_summary": "Running deep analysis on: D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py\n================================================================================\n1. Running AST analysis...\n   [OK] AST analysis completed: 4 issues\n2. Running control flow analysis...\n   [OK] Control flow analysis completed: 0 issues\n3. Running third-party library analysis...\n   [OK] Third-party analysis completed: 5 issues\n4. Running data flow analysis...\n   [OK] Data flow analysis completed: 4 issues\n5. Running pe",
+      "stderr": ""
+    },
+    "summary": {
+      "total_tools": 2,
+      "passed_tools": 1,
+      "success_rate": 50.0,
+      "v2_integration_complete": false
+    }
+  },
+  "enterprise_analysis": {
+    "scan_id": "SCAN-20260330132305",
+    "start_time": "2026-03-30T13:23:05.764555",
+    "skill_path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed",
+    "modules": {
+      "ai_analysis": {
+        "malware_detections": [
+          {
+            "type": "obfuscated_code",
+            "pattern": "__import__",
+            "risk": 

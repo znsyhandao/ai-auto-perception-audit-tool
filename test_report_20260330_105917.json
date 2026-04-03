@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-03-30T10:59:17.874687",
+  "total_tests": 15,
+  "passed": 8,
+  "failed": 7,
+  "success_rate": 53.333333333333336,
+  "results": {
+    "AST Analyzer - Basic": false,
+    "AST Analyzer - File Analysis": false,
+    "Third-Party Analyzer - Basic": false,
+    "Data Flow Analyzer - Basic": false,
+    "Performance Analyzer - Basic": false,
+    "Deep Analysis Suite - Basic": true,
+    "AST Analyzer - Simple File": true,
+    "AST Analyzer - Problematic File": true,
+    "Third-Party Analyzer - With Requirements": false,
+    "Data Flow Analyzer - Complex File": true,
+    "Performance Analyzer - Problematic File": true,
+    "Deep Analysis Suite - All Files": false,
+    "AST Analyzer - Performance": true,
+    "AST Analyzer - Invalid File": true,
+    "AST Analyzer - Invalid Syntax": true
+  }
+}

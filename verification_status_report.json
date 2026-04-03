@@ -1,0 +1,20 @@
+{
+  "verification_time": "2026-03-30 21:37",
+  "services_checked": 3,
+  "services_running": 2,
+  "core_services_running": false,
+  "deep_analysis_available": true,
+  "verification_status": "FAILED",
+  "running_services": [
+    {
+      "port": 8001,
+      "name": "Validator",
+      "status": "healthy"
+    },
+    {
+      "port": 8007,
+      "name": "Deep Analysis",
+      "status": "healthy"
+    }
+  ]
+}

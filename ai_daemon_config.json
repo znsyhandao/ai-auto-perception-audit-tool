@@ -1,0 +1,22 @@
+{
+  "check_interval_minutes": 30,
+  "maintenance_interval_hours": 24,
+  "auto_learn": true,
+  "auto_fix": true,
+  "auto_upgrade": true,
+  "monitor_directories": [
+    "D:/openclaw/releases",
+    "D:/openclaw/workspace/skills",
+    "C:/Users/cqs10/.openclaw/workspace/releases"
+  ],
+  "backup_retention_days": 7,
+  "log_level": "INFO",
+  "email_alerts": false,
+  "email_recipient": "",
+  "max_concurrent_audits": 3,
+  "skill_whitelist": [],
+  "skill_blacklist": [],
+  "learning_confidence_threshold": 0.7,
+  "auto_fix_confidence_threshold": 0.8,
+  "auto_upgrade_confidence_threshold": 0.9
+}

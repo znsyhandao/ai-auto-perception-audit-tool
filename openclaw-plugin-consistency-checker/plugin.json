@@ -1,0 +1,35 @@
+{
+  "name": "consistency-checker",
+  "version": "1.0.0",
+  "description": "检测文档-元数据矛盾，确保提交前一致性",
+  "author": "Your Name",
+  "main": "index.js",
+  "hooks": {
+    "audit:pre": "runConsistencyChecks"
+  },
+  "config": {
+    "strictMode": true,
+    "failOnWarning": false,
+    "scanPatterns": {
+      "networkTerms": [
+        "port\\s+\\d+",
+        "http://",
+        "https://",
+        "socket",
+        "server",
+        "listening on",
+        "\\b\\d{1,5}\\b.*service"
+      ],
+      "urlPatterns": [
+        "github\\.com",
+        "gitlab\\.com",
+        "bitbucket\\.org",
+        "\\bhttps?://[^\\s]+\\b"
+      ],
+      "versionPatterns": [
+        "version\\s*[=:]\\s*[\\d.]+",
+        "v\\d+\\.\\d+\\.\\d+"
+      ]
+    }
+  }
+}

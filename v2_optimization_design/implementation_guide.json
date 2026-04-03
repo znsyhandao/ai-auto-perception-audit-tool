@@ -1,0 +1,95 @@
+{
+  "principles": {
+    "1": "Understand before optimize",
+    "2": "Track both algorithm metrics and architecture quality",
+    "3": "Transparency over perfection",
+    "4": "Learning as primary outcome"
+  },
+  "step_by_step_guide": {
+    "step_1": {
+      "action": "Analyze current state",
+      "questions": [
+        "What is the actual dependency graph?",
+        "What is the current density?",
+        "What are the algorithm limitations?"
+      ],
+      "tools": [
+        "dependency_analyzer.py",
+        "density_calculator.py"
+      ]
+    },
+    "step_2": {
+      "action": "Design algorithm-targeted optimizations",
+      "questions": [
+        "Which dependencies can be removed?",
+        "How to reduce density to target?",
+        "Will algorithm detect the improvements?"
+      ],
+      "methods": [
+        "dependency_reduction",
+        "direction_optimization"
+      ]
+    },
+    "step_3": {
+      "action": "Design architecture-quality enhancements",
+      "questions": [
+        "How to improve interface clarity?",
+        "How to strengthen module cohesion?",
+        "How to establish better hierarchy?"
+      ],
+      "methods": [
+        "interface_refinement",
+        "cohesion_analysis"
+      ]
+    },
+    "step_4": {
+      "action": "Implement and validate",
+      "questions": [
+        "Do algorithm metrics improve?",
+        "Does architecture quality improve?",
+        "What is the relationship between them?"
+      ],
+      "validation": [
+        "mathematical_audit",
+        "architecture_review"
+      ]
+    },
+    "step_5": {
+      "action": "Document and learn",
+      "questions": [
+        "What did we learn about the algorithm?",
+        "What did we learn about optimization?",
+        "How can we improve future optimizations?"
+      ],
+      "outputs": [
+        "learning_report",
+        "optimization_guide"
+      ]
+    }
+  },
+  "tools_needed": [
+    "dependency_graph_analyzer.py",
+    "density_calculator.py",
+    "architecture_quality_assessor.py",
+    "optimization_validator.py"
+  ],
+  "success_metrics": {
+    "algorithm_metrics": {
+      "dependency_density": "\u2264 0.030",
+      "matrix_confidence": "Matches calculated value",
+      "improvement_detectable": "Yes"
+    },
+    "architecture_metrics": {
+      "interface_clarity": "Improved",
+      "module_cohesion": "Improved",
+      "hierarchy_quality": "Improved",
+      "overall_quality": "Significantly better"
+    },
+    "learning_metrics": {
+      "principles_established": "\u2265 3",
+      "tools_created": "\u2265 4",
+      "documentation_completeness": "100%",
+      "reusability": "High"
+    }
+  }
+}

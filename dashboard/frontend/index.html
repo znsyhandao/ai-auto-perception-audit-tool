@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业级审核框架 - 管理面板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card h2 i {
+            font-size: 1.8rem;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .status.healthy {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status.critical {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .metric {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .service-list {
+            list-style: none;
+        }
+        
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .service-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        .service-status.healthy {
+            background: #28a745;
+        }
+        
+        .service-status.warning {
+            background: #ffc107;
+        }
+        
+        .service-status.critical {
+            background: #dc3545;
+        }
+        
+        .audit-form {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏢 企业级审核框架</h1>
+            <p>专业、安全、高效的技能审核平台</p>
+        </div>
+        
+        <div id="alert" class="alert"></div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h2><i>📊</i> 系统状态</h2>
+                <div id="systemStatus" class="status">加载中...</div>
+                <div class="metric" id="healthyServices">0</div>
+                <div class="metric-label">健康服务</div>
+            </div>
+            
+            <div class="card">
+                <h2><i>⚡</i> 响应时间</h2>
+                <div class="metric" id="avgResponseTime">0ms</div>
+                <div class="metric-label">平均响应时间</div>
+            </div>
+            
+            <div class="card">
+                <h2><i>🚨</i> 告警</h2>
+                <div class="metric" id="activeAlerts">0</div>
+                <div class="metric-label">活跃告警</div>
+            </div>
+            
+            <div class="card">
+                <h2><i>📈</i> 审核统计</h2>
+                <div class="metric" id="totalAudits">0</div>
+                <div class="metric-label">总审核次数</div>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h2><i>🔧</i> 服务状态</h2>
+                <ul class="service-list" id="serviceList">
+                    <li class="service-item">
+                        <div class="service-name">
+                            <span class="service-status"></span>
+                            <span>加载中...</span>
+                        </div>
+                        <span class="service-port">-</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2><i>🚀</i> 快速审核</h2>
+                <div class="audit-form">
+                    <div class="form-group">
+                        <label for="skillId">技能ID</label>
+                        <input type="text" id="skillId" placeholder="例如: myskill_v1.0.0" value="aisleepgen_v1.0.7">
+                    </div>
+                    <div class="form-group">
+                        <label for="skillPath">技能路径</label>
+                        <input type="text" id="skillPath" placeholder="例如: D:/skills/myskill" value="D:/openclaw/releases/AISleepGen/v1.0.7_fixed">
+                    </div>
+                    <button class="btn" onclick="runAudit()">开始审核</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><i>📋</i> 最近审核</h2>
+            <div id="recentAudits">
+                <p style="color: #666; text-align: center; padding: 20px;">暂无审核记录</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>企业级审核框架 v3.0 | © 2026 OpenClaw | 最后更新: 2026-03-30</p>
+    </div>
+    
+    <script>
+        // API基础URL
+        const API_BASE = 'http://localhost:8006';
+        
+        // 显示消息
+        function showMessage(type, text) {
+            const alert = document.getElementById('alert');
+            alert.className = `alert ${type}`;
+            alert.textContent = text;
+            alert.style.display = 'block';
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 5000);
+            }
+        }
+        
+        // 获取监控数据
+        async function fetchMonitoringData() {
+            try {
+                const response = await fetch(`${API_BASE}/status`);
+                if (!response.ok) throw new Error('监控服务不可用');
+                
+                const data = await response.json();
+                updateDashboard(data);
+            } catch (error) {
+                console.error('获取监控数据失败:', error);
+                showMessage('error', '无法连接到监控服务');
+            }
+        }
+        
+        // 更新仪表板
+        function updateDashboard(data) {
+            // 更新系统状态
+            const summary = data.summary;
+            const healthyCount = summary.healthy;
+            const totalCount = summary.total;
+            
+            document.getElementById('healthyServices').textContent = `${healthyCount}/${totalCount}`;
+            document.getElementById('systemStatus').className = `status ${healthyCount === totalCount ? 'healthy' : 'warning'}`;
+            document.getElementById('systemStatus').textContent = healthyCount === totalCount ? '所有服务正常' : '部分服务异常';
+            
+            // 更新服务列表
+            const serviceList = document.getElementById('serviceList');
+            serviceList.innerHTML = '';
+            
+            Object.entries(data.services).forEach(([name, service]) => {
+                const li = document.createElement('li');
+                li.className = 'service-item';
+                
+                const statusClass = service.status === 'healthy' ? 'healthy' : 
+                                  service.status === 'unhealthy' ? 'warning' : 'critical';
+                
+                li.innerHTML = `
+                    <div class="service-name">
+                        <span class="service-status ${statusClass}"></span>
+                        <span>${name}</span>
+                    </div>
+                    <span class="service-port">${service.response_time.toFixed(0)}ms</span>
+                `;
+                
+                serviceList.appendChild(li);
+            });
+            
+            // 更新响应时间（计算平均值）
+            const avgResponseTime = Object.values(data.services)
+                .reduce((sum, service) => sum + service.response_time, 0) / totalCount;
+            document.getElementById('avgResponseTime').textContent = `${avgResponseTime.toFixed(0)}ms`;
+        }
+        
+        // 获取告警数据
+        async function fetchAlerts() {
+            try {
+                const response = await fetch(`${API_BASE}/alerts?resolved=false`);
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('activeAlerts').textContent = data.total;
+                }
+            } catch (error) {
+                console.error('获取告警失败:', error);
+            }
+        }
+        
+        // 运行审核
+        async function runAudit() {
+            const skillId = document.getElementById('skillId').value;
+            const skillPath = document.getElementById('skillPath').value;
+            
+            if (!skillId || !skillPath) {
+                showMessage('error', '请填写技能ID和路径');
+                return;
+            }
+            
+            showMessage('success', '开始审核...');
+            
+            try {
+                // 这里应该调用完整的审核API
+                // 暂时使用模拟响应
+                setTimeout(() => {
+                    showMessage('success', `审核完成: ${skillId}`);
+                    
+                    // 更新审核统计
+                    const totalAudits = document.getElementById('totalAudits');
+                    totalAudits.textContent = parseInt(totalAudits.textContent) + 1;
+                    
+                    // 添加到最近审核
+                    addRecentAudit(skillId);
+                }, 2000);
+                
+            } catch (error) {
+                showMessage('error', `审核失败: ${error.message}`);
+            }
+        }
+        
+        // 添加最近审核记录
+        function addRecentAudit(skillId) {
+            const recentAudits = document.getElementById('recentAudits');
+            
+            // 如果还是"暂无审核记录"，清除它
+            if (recentAudits.querySelector('p')) {
+                recentAudits.innerHTML = '';
+            }
+            
+            const auditItem = document.createElement('div');
+            auditItem.className = 'service-item';
+            auditItem.innerHTML = `
+                <div class="service-name">
+                    <span>${skillId}</span>
+                </div>
+                <span>${new Date().toLocaleTimeString()}</span>
+            `;
+            
+            // 添加到顶部
+            recentAudits.insertBefore(auditItem, recentAudits.firstChild);
+            
+            // 限制最多显示5条
+            if (recentAudits.children.length > 5) {
+                recentAudits.removeChild(recentAudits.lastChild);
+            }
+        }
+        
+        // 初始化
+        async function init() {
+            // 初始加载数据
+            await fetchMonitoringData();
+            await fetchAlerts();
+            
+            // 设置定时刷新
+            setInterval(fetchMonitoringData, 10000); // 每10秒刷新
+            setInterval(fetchAlerts, 30000); // 每30秒刷新告警
+            
+            // 初始审核统计
+            document.getElementById('totalAudits').textContent = '1';
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

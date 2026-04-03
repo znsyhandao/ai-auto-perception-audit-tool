@@ -1,0 +1,31 @@
+{
+    "checks":  [
+                   {
+                       "message":  "No version numbers found",
+                       "name":  "Version numbers found",
+                       "critical":  true,
+                       "passed":  false
+                   },
+                   {
+                       "message":  "Placeholder links: found: ONE_TIME_PERMANENT_AUDIT_FRAMEWORK.md: https://docs.example.com, ONE_TIME_PERMANENT_AUDIT_FRAMEWORK.md: https://example.com",
+                       "name":  "No placeholder links",
+                       "critical":  true,
+                       "passed":  false
+                   },
+                   {
+                       "message":  "License file: not found",
+                       "name":  "License file exists",
+                       "critical":  false,
+                       "passed":  false
+                   }
+               ],
+    "warnings":  [
+                     "License file exists"
+                 ],
+    "passed":  0,
+    "failed":  3,
+    "critical_issues":  [
+                            "Version numbers found",
+                            "No placeholder links"
+                        ]
+}

@@ -1,0 +1,18 @@
+{
+  "gateway": {
+    "name": "Enterprise Audit Gateway",
+    "version": "1.0.0",
+    "port": 8080,
+    "routes": {
+      "mathematical": {
+        "prefix": "/api/v1/mathematical",
+        "target": "http://mathematical-audit-service:8040",
+        "endpoints": {
+          "health": "/health",
+          "audit": "/audit",
+          "docs": "/docs"
+        }
+      }
+    }
+  }
+}

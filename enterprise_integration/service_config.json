@@ -1,0 +1,18 @@
+{
+  "service": "mathematical-audit-service",
+  "version": "4.0.0",
+  "status": "integrated",
+  "port": 8010,
+  "endpoints": {
+    "health": "/health",
+    "audit": "/audit",
+    "docs": "/docs"
+  },
+  "mathematical_methods": [
+    "maclaurin_series",
+    "taylor_series",
+    "fourier_transform",
+    "matrix_decomposition",
+    "mathematical_proof"
+  ]
+}

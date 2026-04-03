@@ -1,0 +1,321 @@
+﻿{
+    "critical_issues":  [
+
+                        ],
+    "metadata":  {
+                     "auto_fix":  {
+                                      "IsPresent":  false
+                                  },
+                     "strict_mode":  {
+                                         "IsPresent":  true
+                                     },
+                     "skill_dir":  "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed",
+                     "audit_time":  "2026-03-30 09:20:27"
+                 },
+    "warning_issues":  [
+                           "text_file_format: Files with UTF-8 BOM: 1"
+                       ],
+    "score":  {
+                  "percentage":  96,
+                  "total":  27,
+                  "passed":  26
+              },
+    "recommendations":  [
+
+                        ],
+    "categories":  {
+                       "clawhub_specific":  {
+                                                "total":  2,
+                                                "score":  100,
+                                                "checks":  [
+                                                               {
+                                                                   "passed":  true,
+                                                                   "name":  "Skill name format",
+                                                                   "timestamp":  "09:20:27",
+                                                                   "fix_suggestion":  "Skill name should be lowercase with hyphens, 3-50 chars",
+                                                                   "message":  "Skill name: sleep-rabbit-skill",
+                                                                   "critical":  true
+                                                               },
+                                                               {
+                                                                   "passed":  true,
+                                                                   "name":  "Skill name not placeholder",
+                                                                   "timestamp":  "09:20:27",
+                                                                   "fix_suggestion":  "Use real skill name, not placeholder",
+                                                                   "message":  "Placeholder check: not placeholder",
+                                                                   "critical":  true
+                                                               }
+                                                           ],
+                                                "passed":  2
+                                            },
+                       "security_compliance":  {
+                                                   "total":  3,
+                                                   "score":  100,
+                                                   "checks":  [
+                                                                  {
+                                                                      "passed":  true,
+                                                                      "name":  "config.yaml security section",
+                                                                      "timestamp":  "09:20:27",
+                                                                      "fix_suggestion":  "Add security section to config.yaml",
+                                                                      "message":  "Security section: found",
+                                                                      "critical":  true
+                                                                  },
+                                                                  {
+                                                                      "passed":  true,
+                                                                      "name":  "config.yaml network_access: false",
+                                                                      "timestamp":  "09:20:27",
+                                                                      "fix_suggestion":  "Add network_access: false to security section",
+                                                                      "message":  "network_access: false found",
+                                                                      "critical":  true
+                                                                  },
+                                                                  {
+                                                                      "passed":  true,
+                                                                      "name":  "config.yaml local_only: true",
+                                                                      "timestamp":  "09:20:27",
+                                                                      "fix_suggestion":  "Add local_only: true to security section",
+                                                                      "message":  "local_only: true found",
+                                                                      "critical":  true
+                                                                  }
+                                                              ],
+                                                   "passed":  3
+                                               },
+                       "file_structure":  {
+                                              "total":  7,
+                                              "score":  100,
+                                              "checks":  [
+                                                             {
+                                                                 "passed":  true,
+                                                                 "name":  "File: SKILL.md",
+                                                                 "timestamp":  "09:20:27",
+                                                                 "fix_suggestion":  "Add missing file: SKILL.md",
+                                                                 "message":  "SKILL.md exists",
+                                                                 "critical":  true
+                                                             },
+                                                             {
+                                                                 "passed":  true,
+                                                                 "name":  "File: README.md",
+                                                                 "timestamp":  "09:20:27",
+                                                                 "fix_suggestion":  "Add missing file: README.md",
+                                                                 "message":  "README.md exists",
+                                                                 "critical":  true
+                                                             },
+                                                             {
+                                                                 "passed":  true,
+                                                                 "name":  "File: CHANGELOG.md",
+                                                                 "timestamp":  "09:20:27",
+                                                                 "fix_suggestion":  "Add missing file: CHANGELOG.md",
+                                                                 "message":  "CHANGELOG.md exists",
+                                                                 "critical":  true
+                                                             },
+                                                             {
+                                                                 "passed":  true,
+                                                                 "name":  "File: config.yaml",
+                                                                 "timestamp":  "09:20:27",
+                                                                 "fix_suggestion":  "Add missing file: config.yaml",
+                                                                 "message":  "config.yaml exists",
+                                                                 "critical":  true
+                                                             },
+                                                             {
+                                                                 "passed":  true,
+                                                                 "name":  "File: package.json",
+                                                                 "timestamp":  "09:20:27",
+                                                                 "fix_suggestion":  "Add missing file: package.json",
+                                                                 "message":  "package.json exists",
+                                                                 "critical":  true
+                                                             },
+                                                             {
+                                                                 "passed":  true,
+                                                                 "name":  "File: skill.py",
+                                                                 "timestamp":  "09:20:27",
+                                                                 "fix_suggestion":  "Add missing file: skill.py",
+                                                                 "message":  "skill.py exists",
+                                                                 "critical":  true
+                                                             },
+                                                             {
+                                                                 "passed":  true,
+                                                                 "name":  "File: requirements.txt",
+                                                                 "timestamp":  "09:20:27",
+                                                                 "fix_suggestion":  "Add missing file: requirements.txt",
+                                                                 "message":  "requirements.txt exists",
+                                                                 "critical":  true
+                                                             }
+                                                         ],
+                                              "passed":  7
+                                          },
+                       "code_quality":  {
+                                            "total":  1,
+                                            "score":  100,
+                                            "checks":  [
+                                                           {
+                                                               "passed":  true,
+                                                               "name":  "No dangerous imports in skill.py",
+                                                               "timestamp":  "09:20:27",
+                                                               "fix_suggestion":  "Remove dangerous imports (subprocess, os.system)",
+                                                               "message":  "Dangerous imports: not found",
+                                                               "critical":  true
+                                                           }
+                                                       ],
+                                            "passed":  1
+                                        },
+                       "metadata_validation":  {
+                                                   "total":  1,
+                                                   "score":  100,
+                                                   "checks":  [
+                                                                  {
+                                                                      "passed":  true,
+                                                                      "name":  "package.json metadata completeness",
+                                                                      "timestamp":  "09:20:27",
+                                                                      "fix_suggestion":  "Complete all metadata fields in package.json",
+                                                                      "message":  "Metadata completeness: Name=True, Description=True, Author=True, License=True",
+                                                                      "critical":  true
+                                                                  }
+                                                              ],
+                                                   "passed":  1
+                                               },
+                       "version_consistency":  {
+                                                   "total":  1,
+                                                   "score":  100,
+                                                   "checks":  [
+                                                                  {
+                                                                      "passed":  true,
+                                                                      "name":  "Version consistency",
+                                                                      "timestamp":  "09:20:27",
+                                                                      "fix_suggestion":  "Make all version numbers consistent",
+                                                                      "message":  "Versions: ",
+                                                                      "critical":  true
+                                                                  }
+                                                              ],
+                                                   "passed":  1
+                                               },
+                       "link_validation":  {
+                                               "total":  2,
+                                               "score":  100,
+                                               "checks":  [
+                                                              {
+                                                                  "passed":  true,
+                                                                  "name":  "Author URL format",
+                                                                  "timestamp":  "09:20:27",
+                                                                  "fix_suggestion":  "Add valid author URL to package.json",
+                                                                  "message":  "Author URL: valid format",
+                                                                  "critical":  false
+                                                              },
+                                                              {
+                                                                  "passed":  true,
+                                                                  "name":  "Author URL not placeholder",
+                                                                  "timestamp":  "09:20:27",
+                                                                  "fix_suggestion":  "Replace placeholder URL with real URL",
+                                                                  "message":  "Author URL placeholder: False",
+                                                                  "critical":  true
+                                                              }
+                                                          ],
+                                               "passed":  2
+                                           },
+                       "dependency_validation":  {
+                                                     "total":  1,
+                                                     "score":  100,
+                                                     "checks":  [
+                                                                    {
+                                                                        "passed":  true,
+                                                                        "name":  "requirements.txt has real dependencies",
+                                                                        "timestamp":  "09:20:27",
+                                                                        "fix_suggestion":  "Add dependencies to requirements.txt or remove the file",
+                                                                        "message":  "Real dependencies: found",
+                                                                        "critical":  false
+                                                                    }
+                                                                ],
+                                                     "passed":  1
+                                                 },
+                       "license_compliance":  {
+                                                  "total":  2,
+                                                  "score":  100,
+                                                  "checks":  [
+                                                                 {
+                                                                     "passed":  true,
+                                                                     "name":  "License file exists",
+                                                                     "timestamp":  "09:20:27",
+                                                                     "fix_suggestion":  "Add LICENSE file with appropriate license",
+                                                                     "message":  "License file: found",
+                                                                     "critical":  false
+                                                                 },
+                                                                 {
+                                                                     "passed":  true,
+                                                                     "name":  "package.json license field",
+                                                                     "timestamp":  "09:20:27",
+                                                                     "fix_suggestion":  "Add license field to package.json",
+                                                                     "message":  "package.json license: MIT",
+                                                                     "critical":  false
+                                                                 }
+                                                             ],
+                                                  "passed":  2
+                                              },
+                       "documentation_quality":  {
+                                                     "total":  3,
+                                                     "score":  100,
+                                                     "checks":  [
+                                                                    {
+                                                                        "passed":  true,
+                                                                        "name":  "Document: SKILL.md",
+                                                                        "timestamp":  "09:20:27",
+                                                                        "fix_suggestion":  "Add missing documentation: SKILL.md",
+                                                                        "message":  "SKILL.md exists",
+                                                                        "critical":  false
+                                                                    },
+                                                                    {
+                                                                        "passed":  true,
+                                                                        "name":  "Document: README.md",
+                                                                        "timestamp":  "09:20:27",
+                                                                        "fix_suggestion":  "Add missing documentation: README.md",
+                                                                        "message":  "README.md exists",
+                                                                        "critical":  false
+                                                                    },
+                                                                    {
+                                                                        "passed":  true,
+                                                                        "name":  "Document: CHANGELOG.md",
+                                                                        "timestamp":  "09:20:27",
+                                                                        "fix_suggestion":  "Add missing documentation: CHANGELOG.md",
+                                                                        "message":  "CHANGELOG.md exists",
+                                                                        "critical":  false
+                                                                    }
+                                                                ],
+                                                     "passed":  3
+                                                 },
+                       "text_file_format":  {
+                                                "total":  4,
+                                                "score":  75,
+                                                "checks":  [
+                                                               {
+                                                                   "passed":  true,
+                                                                   "name":  "All files have extensions",
+                                                                   "timestamp":  "09:20:27",
+                                                                   "fix_suggestion":  "Add extensions to files: ",
+                                                                   "message":  "Files without extension: 0",
+                                                                   "critical":  true
+                                                               },
+                                                               {
+                                                                   "passed":  true,
+                                                                   "name":  "License file has valid extension (.txt or .md)",
+                                                                   "timestamp":  "09:20:27",
+                                                                   "fix_suggestion":  "Rename LICENSE to LICENSE.txt or LICENSE.md",
+                                                                   "message":  "License file extension: .txt",
+                                                                   "critical":  true
+                                                               },
+                                                               {
+                                                                   "passed":  true,
+                                                                   "name":  "License file encoding (no UTF-8 BOM)",
+                                                                   "timestamp":  "09:20:27",
+                                                                   "fix_suggestion":  "Save license file as UTF-8 without BOM",
+                                                                   "message":  "License file BOM: no BOM",
+                                                                   "critical":  false
+                                                               },
+                                                               {
+                                                                   "passed":  false,
+                                                                   "name":  "No UTF-8 BOM in text files",
+                                                                   "timestamp":  "09:20:27",
+                                                                   "fix_suggestion":  "Save files as UTF-8 without BOM: simple_audit_report_20260330_091436.json",
+                                                                   "message":  "Files with UTF-8 BOM: 1",
+                                                                   "critical":  false
+                                                               }
+                                                           ],
+                                                "passed":  3
+                                            }
+                   }
+}

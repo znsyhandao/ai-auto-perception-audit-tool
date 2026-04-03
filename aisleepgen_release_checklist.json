@@ -1,0 +1,53 @@
+{
+  "checklist_id": "RELEASE_CHECKLIST_1774918017",
+  "skill": "AISleepGen v1.0.7_fixed",
+  "checks": [
+    {
+      "category": "Mathematical Audit",
+      "items": [
+        {
+          "item": "Overall mathematical score \u2265 70",
+          "status": "pending",
+          "weight": 30
+        },
+        {
+          "item": "At least 3 mathematical certificates",
+          "status": "pending",
+          "weight": 20
+        },
+        {
+          "item": "Average confidence \u2265 0.7",
+          "status": "pending",
+          "weight": 15
+        },
+        {
+          "item": "Validity rate \u2265 70%",
+          "status": "pending",
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "category": "Technical Requirements",
+      "items": [
+        {
+          "item": "ClawHub audit passed",
+          "status": "checked",
+          "weight": 10
+        },
+        {
+          "item": "No critical security issues",
+          "status": "checked",
+          "weight": 10
+        },
+        {
+          "item": "Documentation complete",
+          "status": "checked",
+          "weight": 10
+        }
+      ]
+    }
+  ],
+  "passing_score": 70,
+  "generated_at": "2026-03-31 08:46:57"
+}

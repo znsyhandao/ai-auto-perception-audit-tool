@@ -1,0 +1,54 @@
+{
+  "principle": "理解优先于通过",
+  "algorithm_understanding": {
+    "what_it_detects": "dependency_density",
+    "formula": "confidence = 0.6 + (density × 0.4)",
+    "how_to_improve": "Reduce dependency density"
+  },
+  "optimization_strategies": [
+    {
+      "strategy": "reduce_dependency_count",
+      "description": "减少依赖关系数量",
+      "methods": [
+        "消除不必要的依赖",
+        "合并相关功能",
+        "使用接口减少直接依赖"
+      ],
+      "expected_effect": "降低密度，提高置信度"
+    },
+    {
+      "strategy": "increase_module_count",
+      "description": "增加模块数量（谨慎使用）",
+      "methods": [
+        "合理拆分大模块",
+        "创建清晰的模块边界",
+        "避免过度拆分"
+      ],
+      "expected_effect": "可能降低密度，但需平衡"
+    },
+    {
+      "strategy": "optimize_dependency_direction",
+      "description": "优化依赖方向",
+      "methods": [
+        "创建单向依赖",
+        "避免循环依赖",
+        "建立层次结构"
+      ],
+      "note": "算法不直接检测，但改善架构质量"
+    }
+  ],
+  "validation_method": {
+    "step1": "计算当前依赖密度",
+    "step2": "设定优化目标密度",
+    "step3": "实施优化策略",
+    "step4": "验证密度降低",
+    "step5": "验证置信度提高"
+  },
+  "targets_for_aisleepgen": {
+    "current_density": "待计算",
+    "target_density": 0.03,
+    "current_confidence": 0.7,
+    "target_confidence": 0.612,
+    "improvement_needed": "密度从~0.043降到0.03"
+  }
+}

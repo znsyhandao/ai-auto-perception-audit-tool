@@ -1,0 +1,11 @@
+{
+  "scan_id": "SCAN-20260330115026",
+  "start_time": "2026-03-30T11:50:26.441321",
+  "skill_path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed",
+  "modules": {
+    "ai_analysis": {
+      "malware_detections": [
+        {
+          "type": "obfuscated_code",
+          "pattern": "__import__",
+          "risk": 

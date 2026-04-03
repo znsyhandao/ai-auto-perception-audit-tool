@@ -1,0 +1,18 @@
+{
+  "analysis_time": "2026-03-31T13:35:00Z",
+  "key_observation": "Same confidence (0.750) but different validity (questionable vs valid)",
+  "hypothesis": "Mixed mathematical properties cause questionable validity",
+  "test_created": "mixed-property skill to test hypothesis",
+  "implications": [
+    "AISleepGen has inconsistent mathematical properties",
+    "Algorithm detects this inconsistency",
+    "0.750 is likely weighted average, not baseline",
+    "Validity marks consistency, not just quality"
+  ],
+  "optimization_implications": [
+    "Identify inconsistent functions",
+    "Make mathematical properties consistent",
+    "Aim for 'valid' validity, not just higher confidence",
+    "Focus on consistency across all functions"
+  ]
+}

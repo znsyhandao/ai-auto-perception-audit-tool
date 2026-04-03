@@ -1,0 +1,56 @@
+{
+  "enterprise_scan": {
+    "ai_analysis": {
+      "quality_score": 0.85,
+      "malware_detections": [
+        {
+          "type": "obfuscated_code",
+          "pattern": "__import__"
+        },
+        {
+          "type": "persistence",
+          "pattern": "schedule"
+        }
+      ]
+    },
+    "sandbox_execution": {
+      "security_score": 60,
+      "policy_violations": 2
+    },
+    "supply_chain": {
+      "dependencies": 3,
+      "vulnerabilities": 1
+    },
+    "compliance": {
+      "gdpr_compliant": true,
+      "soc2_compliant": true
+    }
+  },
+  "v2_deep_analysis": {
+    "ast_analysis": {
+      "exit_code": 1,
+      "raw_output": "================================================================================\nAST Deep Code Analysis Report\n================================================================================\nFile: D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py\nTotal issues: 4\nHigh-risk issues: 4\nMedium-risk issues: 0\nLow-risk issues: 0\n--------------------------------------------------------------------------------\nSummary: [HIGH] Found 4 high-risk issues\n\nDetailed issues:\n  [HIGH] L75: SECURITY_VULNERABILITY - ⵽Σպ: self.execute_command - ִз\n  [HIGH] L223: SECURITY_VULNERABILITY - ⵽Σպ: open - ļ\n  [HIGH] L440: SECURITY_VULNERABILITY - ⵽Σպ: open - ļ\n  [HIGH] L602: SECURITY_VULNERABILITY - ⵽Σպ: skill.execute_command - ִз\n================================================================================\n",
+      "issues_count": 0,
+      "issues": [],
+      "success": false
+    },
+    "deep_analysis_suite": {
+      "exit_code": 1,
+      "raw_output": "Analyzing directory: D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\n================================================================================\n\nAnalyzing: D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py\nRunning deep analysis on: D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py\n================================================================================\n1. Running AST analysis...\n   [OK] AST analysis completed: 4 issues\n2. Running control flow analysis...\n   [OK] Control flow analysis completed: 0 issues\n3. Running third-party library analysis...\n   [OK] Third-party analysis completed: 5 issues\n4. Running data flow analysis...\n   [OK] Data flow analysis completed: 4 issues\n5. Running performance analysis...\n   [OK] Performance analysis completed: 10 issues\n================================================================================\nAll analyses completed!\n  Issues found: 23 (H:6/M:16/L:1)\n\n===========================================================================",
+      "summary": {},
+      "success": false
+    },
+    "control_flow_analysis": {
+      "raw_output": "",
+      "error": "JSON parse error"
+    },
+    "data_flow_analysis": {
+      "raw_output": "================================================================================\nData Flow Analysis Report\n================================================================================\nFile: D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed\\skill.py\nTotal issues: 4\nHigh-risk issues: 0\nMedium-risk issues: 4\nLow-risk issues: 0\n--------------------------------------------------------------------------------\nSummary: [MEDIUM] Found 4 medium-risk data flow issues\n=======================================",
+      "error": "JSON parse error"
+    },
+    "timestamp": "2026-03-30T13:31:12.073145"
+  },
+  "combined_risk_score": 54.0,
+  "scan_timestamp": "2026-03-30T13:31:12.748871",
+  "skill_directory": "D:\\openclaw\\releases\\AISleepGen\\v1.0.7_fixed"
+}

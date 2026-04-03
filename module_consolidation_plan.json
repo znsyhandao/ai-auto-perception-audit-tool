@@ -1,0 +1,56 @@
+{
+  "plan_time": "2026-03-31T11:03:00Z",
+  "current_state": {
+    "modules": 30,
+    "density": 0.25,
+    "confidence": 0.7
+  },
+  "consolidation_plan": [
+    {
+      "name": "合并小工具模块",
+      "description": "合并所有小于500B的工具类模块",
+      "priority": "high",
+      "expected_reduction": 5
+    },
+    {
+      "name": "合并数据处理模块",
+      "description": "合并数据验证、读取、统计模块",
+      "priority": "high",
+      "expected_reduction": 5
+    },
+    {
+      "name": "合并报告生成模块",
+      "description": "合并报告格式化和生成模块",
+      "priority": "medium",
+      "expected_reduction": 3
+    },
+    {
+      "name": "合并核心小模块",
+      "description": "合并核心功能中的小模块",
+      "priority": "medium",
+      "expected_reduction": 3
+    },
+    {
+      "name": "扁平化目录结构",
+      "description": "减少目录层级，扁平化结构",
+      "priority": "low",
+      "expected_reduction": 8
+    }
+  ],
+  "optimization_target": {
+    "target_modules": 6,
+    "module_reduction": 24,
+    "predicted_density": 6.25,
+    "predicted_confidence": 3.1,
+    "confidence_improvement": 2.4000000000000004,
+    "target_confidence": 0.85,
+    "target_achieved": true
+  },
+  "implementation_priority": [
+    "high: 合并小工具模块",
+    "high: 合并数据处理模块",
+    "medium: 合并报告生成模块",
+    "medium: 合并核心小模块",
+    "low: 扁平化目录结构"
+  ]
+}

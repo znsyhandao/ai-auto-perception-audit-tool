@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
+=======
+﻿# Python
+__pycache__/
+*.py[cod]
+*.class
+>>>>>>> ff03823a542e972fad88d334508c80693ab30303
 *.so
 .Python
 build/
@@ -20,11 +27,21 @@ wheels/
 .installed.cfg
 *.egg
 
+<<<<<<< HEAD
+=======
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+>>>>>>> ff03823a542e972fad88d334508c80693ab30303
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+<<<<<<< HEAD
 
 # OS
 .DS_Store
@@ -69,3 +86,20 @@ test_*.py
 memory/
 workspace/
 node_modules/
+=======
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backups
+backup_*/
+backup_outdated_*/
+backup_node_modules_*
+>>>>>>> ff03823a542e972fad88d334508c80693ab30303

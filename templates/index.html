@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Audit Framework v3.0 - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Enterprise Audit Framework v3.0</h1>
+            <div class="subtitle">Professional Skill Plugin Security & Quality Analysis</div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-primary" onclick="loadSampleReport()">Load Sample Report</button>
+            <button class="btn btn-secondary" onclick="refreshReports()">Refresh Reports</button>
+            <div style="flex-grow: 1;"></div>
+            <span id="status" class="risk-badge risk-low">Ready</span>
+        </div>
+        
+        <div id="dashboard-content" class="loading">
+            <h2>Loading dashboard...</h2>
+            <p>Please wait while we load the latest audit reports.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Enterprise Audit Framework v3.0 | © 2026 OpenClaw Testing Framework</p>
+            <p>Last updated: <span id="last-updated">Loading...</span></p>
+        </div>
+    </div>
+    
+    <script>
+        // 全局变量
+        let currentReport = null;
+        let chartInstances = [];
+        
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLatestReport();
+            updateLastUpdated();
+        });
+        
+        // 加载最新报告
+        async function loadLatestReport() {
+            try {
+                const response = await fetch('/api/reports');
+                const reports = await response.json();
+                
+                if (reports.length > 0) {
+                    // 加载最新的报告
+                    await loadReport(reports[0].id);
+                } else {
+                    // 没有报告，显示空状态
+                    showEmptyState();
+                }
+            } catch (error) {
+                console.error('Error loading reports:', error);
+                showError('Failed to load reports');
+            }
+        }
+        
+        // 加载报告
+        async function loadReport(reportId) {
+            setStatus('Loading...', 'medium');
+            
+            try {
+                const response = await fetch(`/api/report/${reportId}`);
+                const report = await response.json();
+                
+                currentReport = report;
+                renderDashboard(report);
+                setStatus('Loaded', 'low');
+            } catch (error) {
+                console.error('Error loading report:', error);
+                showError('Failed to load report');
+                setStatus('Error', 'critical');
+            }
+        }
+        
+        // 加载示例报告
+        async function loadSampleReport() {
+            setStatus('Generating sample...', 'medium');
+            
+            // 这里可以调用API生成示例报告
+            // 暂时使用模拟数据
+            const sampleReport = {
+                id: 'sample-' + Date.now(),
+                timestamp: new Date().toISOString(),
+                skill_directory: '/sample/skill',
+                combined_risk_score: 65,
+                risk_level: 'HIGH',
+                summary: {
+                    enterprise_scan: {
+                        ai_analysis: {
+                            quality_score: 0.72,
+                            malware_detections: 3
+                        },
+                        sandbox_execution: {
+                            security_score: 55,
+                            policy_violations: 2
+                        }
+                    },
+                    v2_deep_analysis: {
+                        ast_analysis: { issues_count: 4 },
+                        deep_analysis_suite: { summary: { total_issues: 23 } }
+                    }
+                }
+            };
+            
+            currentReport = sampleReport;
+            renderDashboard(sampleReport);
+            setStatus('Sample loaded', 'low');
+        }
+        
+        // 刷新报告列表
+        async function refreshReports() {
+            setStatus('Refreshing...', 'medium');
+            await loadLatestReport();
+        }
+        
+        // 渲染仪表板
+        function renderDashboard(report) {
+            const container = document.getElementById('dashboard-content');
+            
+            // 计算风险等级
+            const riskScore = report.combined_risk_score || 0;
+            const riskLevel = getRiskLevel(riskScore);
+            const riskColor = getRiskColor(riskLevel);
+            
+            // 提取数据
+            const enterprise = report.summary?.enterprise_scan || {};
+            const v2 = report.summary?.v2_deep_analysis || {};
+            
+            const aiScore = enterprise.ai_analysis?.quality_score || 0;
+            const malwareCount = enterprise.ai_analysis?.malware_detections?.length || 0;
+            const securityScore = enterprise.sandbox_execution?.security_score || 0;
+            const astIssues = v2.ast_analysis?.issues_count || 0;
+            const deepIssues = v2.deep_analysis_suite?.summary?.total_issues || 0;
+            
+            // 生成HTML
+            container.innerHTML = `
+                <div class="dashboard-grid">
+                    <div class="card ${riskLevel.toLowerCase()}">
+                        <div class="card-header">
+                            <div class="card-title">Overall Risk</div>
+                            <div class="risk-badge risk-${riskLevel.toLowerCase()}">${riskLevel}</div>
+                        </div>
+                        <div class="card-value">${riskScore.toFixed(1)}/100</div>
+                        <div class="chart-container">
+                            <canvas id="riskChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">AI Analysis</div>
+                            <div class="risk-badge ${aiScore > 0.8 ? 'risk-low' : aiScore > 0.6 ? 'risk-medium' : 'risk-high'}">
+                                ${(aiScore * 100).toFixed(0)}%
+                            </div>
+                        </div>
+                        <div>Quality Score</div>
+                        <div>Malware Detections: ${malwareCount}</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Security Score</div>
+                            <div class="risk-badge ${securityScore > 80 ? 'risk-low' : securityScore > 60 ? 'risk-medium' : 'risk-high'}">
+                                ${securityScore}/100
+                            </div>
+                        </div>
+                        <div>Sandbox Execution</div>
+                        <div>Policy Violations: ${enterprise.sandbox_execution?.policy_violations || 0}</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Code Issues</div>
+                            <div class="risk-badge ${(astIssues + deepIssues) < 10 ? 'risk-low' : (astIssues + deepIssues) < 30 ? 'risk-medium' : 'risk-high'}">
+                                ${astIssues + deepIssues}
+                            </div>
+                        </div>
+                        <div>AST Issues: ${astIssues}</div>
+                        <div>Deep Analysis: ${deepIssues}</div>
+                    </div>
+                </div>
+                
+                <div class="issues-list">
+                    <h3>Recent Scan Details</h3>
+                    <div class="issue-item">
+                        <span class="issue-severity">Skill:</span>
+                        <span class="issue-description">${report.skill_directory || 'Unknown'}</span>
+                    </div>
+                    <div class="issue-item">
+                        <span class="issue-severity">Scan Time:</span>
+                        <span class="issue-description">${new Date(report.timestamp).toLocaleString()}</span>
+                    </div>
+                    <div class="issue-item">
+                        <span class="issue-severity">Recommendation:</span>
+                        <span class="issue-description">${getRecommendation(riskLevel)}</span>
+                    </div>
+                </div>
+            `;
+            
+            // 创建图表
+            createRiskChart(riskScore);
+        }
+        
+        // 创建风险图表
+        function createRiskChart(score) {
+            const ctx = document.getElementById('riskChart').getContext('2d');
+            
+            // 清理之前的图表实例
+            chartInstances.forEach(chart => chart.destroy());
+            chartInstances = [];
+            
+            const chart = new Chart(ctx, {
+                type: 'gauge',
+                data: {
+                    datasets: [{
+                        data: [score, 100 - score],
+                        backgroundColor: [
+                            getRiskColor(getRiskLevel(score)),
+                            '#f0f0f0'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    circumference: 180,
+                    rotation: 270,
+                    cutout: '80%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    },
+                    valueLabel: {
+                        display: true,
+                        formatter: (value) => value.toFixed(1),
+                        color: '#333',
+                        font: { size: 24, weight: 'bold' }
+                    }
+                }
+            });
+            
+            chartInstances.push(chart);
+        }
+        
+        // 辅助函数
+        function getRiskLevel(score) {
+            if (score < 20) return 'LOW';
+            if (score < 50) return 'MEDIUM';
+            if (score < 80) return 'HIGH';
+            return 'CRITICAL';
+        }
+        
+        function getRiskColor(level) {
+            switch(level) {
+                case 'LOW': return '#27ae60';
+                case 'MEDIUM': return '#f39c12';
+                case 'HIGH': return '#e67e22';
+                case 'CRITICAL': return '#e74c3c';
+                default: return '#95a5a6';
+            }
+        }
+        
+        function getRecommendation(level) {
+            switch(level) {
+                case 'LOW': return 'APPROVE FOR PUBLICATION - Low risk';
+                case 'MEDIUM': return 'CONDITIONAL APPROVAL - Medium risk';
+                case 'HIGH': return 'DELAY PUBLICATION - High risk issues';
+                case 'CRITICAL': return 'REJECT PUBLICATION - Critical issues found';
+                default: return 'Review required';
+            }
+        }
+        
+        function setStatus(text, level) {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = text;
+            statusEl.className = 'risk-badge risk-' + level;
+        }
+        
+        function showError(message) {
+            const container = document.getElementById('dashboard-content');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 40px; color: #e74c3c;">
+                    <h2>Error</h2>
+                    <p>${message}</p>
+                    <button class="btn btn-primary" onclick="loadLatestReport()">Try Again</button>
+                </div>
+            `;
+        }
+        
+        function showEmptyState() {
+            const container = document.getElementById('dashboard-content');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <h2>No Reports Available</h2>
+                    <p>No audit reports found. Run a scan to get started.</p>
+                    <button class="btn btn-primary" onclick="loadSampleReport()">Load Sample Report</button>
+                </div>
+            `;
+        }
+        
+        function updateLastUpdated() {
+            document.getElementById('last-updated').textContent = new Date().toLocaleString();
+        }
+        
+        // 每30秒更新一次时间
+        setInterval(updateLastUpdated, 30000);
+    </script>
+</body>
+</html>

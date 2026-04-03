@@ -1,0 +1,225 @@
+version: '3.8'
+
+services:
+  # API网关服务
+  api-gateway:
+    build:
+      context: ./microservices/api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - VALIDATOR_SERVICE_URL=http://validator:8001
+      - SECURITY_SERVICE_URL=http://security:8002
+      - PERFORMANCE_SERVICE_URL=http://performance:8003
+      - COMPLIANCE_SERVICE_URL=http://compliance:8004
+      - REPORTING_SERVICE_URL=http://reporting:8005
+      - MONITORING_SERVICE_URL=http://monitoring:8006
+      - DEEP_ANALYSIS_SERVICE_URL=http://deep-analysis:8007
+      - LOG_LEVEL=INFO
+    depends_on:
+      - validator
+      - security
+      - performance
+      - compliance
+      - reporting
+      - monitoring
+      - deep-analysis
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # 验证服务
+  validator:
+    build:
+      context: ./microservices/validator-service
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+      - HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+    volumes:
+      - ./data/skills:/app/skills:ro
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # 安全服务
+  security:
+    build:
+      context: ./microservices/security-service
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      - PORT=8002
+      - HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+      - API_KEY_REQUIRED=false
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # 性能服务
+  performance:
+    build:
+      context: ./microservices/performance-service
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    environment:
+      - PORT=8003
+      - HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # 合规服务
+  compliance:
+    build:
+      context: ./microservices/compliance-service
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8004"
+    environment:
+      - PORT=8004
+      - HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # 报告服务
+  reporting:
+    build:
+      context: ./microservices/reporting-service
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8005"
+    environment:
+      - PORT=8005
+      - HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+    volumes:
+      - ./data/reports:/app/reports
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # 监控服务
+  monitoring:
+    build:
+      context: ./microservices/monitoring-service
+      dockerfile: Dockerfile
+    ports:
+      - "8006:8006"
+    environment:
+      - PORT=8006
+      - HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+      - VALIDATOR_URL=http://validator:8001
+      - SECURITY_URL=http://security:8002
+      - PERFORMANCE_URL=http://performance:8003
+      - COMPLIANCE_URL=http://compliance:8004
+      - REPORTING_URL=http://reporting:8005
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # 深度分析服务
+  deep-analysis:
+    build:
+      context: ./microservices/deep-analysis-service
+      dockerfile: Dockerfile
+    ports:
+      - "8007:8007"
+    environment:
+      - PORT=8007
+      - HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+      - API_KEY_REQUIRED=false
+    volumes:
+      - ./data/analysis:/app/analysis
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # Redis缓存（可选）
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # PostgreSQL数据库（可选）
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=enterprise_framework
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=changeme
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # Web管理界面
+  web-dashboard:
+    build:
+      context: ./dashboard/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+      - REACT_APP_WS_URL=ws://localhost:8000/ws
+    depends_on:
+      - api-gateway
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+  # Nginx反向代理（生产环境）
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - api-gateway
+      - web-dashboard
+    networks:
+      - enterprise-network
+    restart: unless-stopped
+
+networks:
+  enterprise-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+  postgres-data:
+  skills-data:
+  reports-data:
+  analysis-data:

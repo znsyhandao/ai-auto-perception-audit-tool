@@ -1,0 +1,60 @@
+{
+  "analysis_time": "2026-03-31T09:56:00Z",
+  "skill_path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.9_optimized",
+  "metrics": {
+    "total_dependencies": 60,
+    "module_count": 5,
+    "dependency_types": {
+      "import_statement": 21,
+      "method_call": 11,
+      "attribute_access": 23,
+      "class_inheritance": 5
+    },
+    "weighted_dependencies": {
+      "import_statement": 42.0,
+      "method_call": 16.5,
+      "attribute_access": 23.0,
+      "class_inheritance": 15.0
+    },
+    "total_weight": 96.5,
+    "weighted_density": 3.86,
+    "estimated_confidence": 1.0,
+    "current_audit_confidence": 0.7,
+    "confidence_gap": 0.30000000000000004,
+    "optimization_target": 0.85
+  },
+  "optimization_targets": [
+    {
+      "dependency_type": "import_statement",
+      "count": 21,
+      "total_weight": 42.0,
+      "average_weight": 2.0,
+      "optimization_strategy": "Consolidate imports, remove unused imports",
+      "estimated_impact": "Medium impact: Reduce by 5 dependencies",
+      "priority": "medium"
+    },
+    {
+      "dependency_type": "attribute_access",
+      "count": 23,
+      "total_weight": 23.0,
+      "average_weight": 1.0,
+      "optimization_strategy": "Simplify attribute chains, use direct access",
+      "estimated_impact": "Low impact: Reduce by 4 dependencies",
+      "priority": "medium"
+    },
+    {
+      "dependency_type": "method_call",
+      "count": 11,
+      "total_weight": 16.5,
+      "average_weight": 1.5,
+      "optimization_strategy": "Reduce internal method calls, simplify object interactions",
+      "estimated_impact": "Low impact: Reduce by 2 dependencies",
+      "priority": "medium"
+    }
+  ],
+  "principles_applied": [
+    "理解优先于通过 - 基于对审核依赖检测的理解",
+    "针对性优化 - 针对高权重依赖类型",
+    "实证分析 - 基于实际代码分析"
+  ]
+}

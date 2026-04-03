@@ -1,0 +1,57 @@
+﻿{
+  "name": "skincare-ai",
+  "version": "1.0.4",
+  "description": "AI-powered skincare analysis and product recommendation",
+  "author": "znsyhandao",
+  "license": "MIT",
+  "main": "skill_ascii_fixed.py",
+  "runtime": "python",
+  "commands": [
+    {
+      "name": "help",
+      "description": "Show help information",
+      "handler": "help"
+    },
+    {
+      "name": "status",
+      "description": "Show skill status",
+      "handler": "status"
+    },
+    {
+      "name": "analyze",
+      "description": "Analyze skin from an image",
+      "parameters": {
+        "image_path": {
+          "type": "string",
+          "description": "Path to local image file",
+          "required": true
+        }
+      },
+      "handler": "analyze"
+    },
+    {
+      "name": "recommend",
+      "description": "Get product recommendations based on skin type",
+      "parameters": {
+        "skin_type": {
+          "type": "string",
+          "description": "dry/oily/combination/sensitive/normal",
+          "required": true
+        }
+      },
+      "handler": "recommend"
+    },
+    {
+      "name": "chat",
+      "description": "Ask skincare questions",
+      "parameters": {
+        "question": {
+          "type": "string",
+          "description": "Your skincare question",
+          "required": true
+        }
+      },
+      "handler": "chat"
+    }
+  ]
+}

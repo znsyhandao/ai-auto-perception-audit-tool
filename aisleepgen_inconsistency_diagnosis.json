@@ -1,0 +1,40 @@
+{
+  "diagnosis_time": "2026-03-31T13:45:00Z",
+  "skill_version": "v2.2_maclaurin_optimized",
+  "current_status": {
+    "confidence": 0.75,
+    "validity": "questionable"
+  },
+  "diagnosis_results": {
+    "total_functions": 35,
+    "suitable_functions": 23,
+    "unsuitable_functions": 12,
+    "borderline_functions": 0,
+    "consistency_score": 0.657,
+    "primary_issues": [
+      "Conditional logic - may not be analytic at 0",
+      "Exception handling - potential discontinuity",
+      "Exception handling - discontinuity",
+      "Conditional logic - discontinuity",
+      "Exception throwing - discontinuity"
+    ]
+  },
+  "interpretation": "Mixed suitability causes questionable validity",
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Refactor unsuitable functions",
+      "target": "12 clearly unsuitable functions",
+      "approach": "Make them Maclaurin-suitable or use alternative methods",
+      "expected_impact": "Improve consistency, may change validity to valid"
+    },
+    {
+      "priority": "high",
+      "action": "Achieve consistency",
+      "target": "Achieve >90% consistency (65.7% → >90%)",
+      "approach": "Either make all functions suitable, or clearly separate unsuitable ones",
+      "expected_impact": "Change validity from questionable to valid"
+    }
+  ],
+  "optimization_strategy": "Achieve consistency to change validity from questionable to valid"
+}

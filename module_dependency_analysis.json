@@ -1,0 +1,94 @@
+{
+  "analysis_time": "2026-03-31T09:05:00Z",
+  "skill_path": "D:/openclaw/releases/AISleepGen/v1.0.8_modular",
+  "module_count": 9,
+  "dependency_density": 0.1111111111111111,
+  "problems": [
+    {
+      "type": "high_coupling",
+      "description": "Found 1 highly coupled modules",
+      "modules": [
+        {
+          "module": "skill",
+          "imports": 9,
+          "coupling_ratio": 1.125,
+          "imported_modules": [
+            "os",
+            "pathlib.Path",
+            "typing.Dict",
+            "typing.List",
+            "typing.Any"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "size_imbalance",
+      "description": "Module size imbalance detected",
+      "issues": {
+        "large_modules": [
+          {
+            "module": "skill",
+            "size_kb": 2.6494140625,
+            "ratio_to_avg": 5.253227194492254
+          }
+        ],
+        "size_disparity": {
+          "max_size_kb": 2.6494140625,
+          "min_size_kb": 0.015625,
+          "ratio": 169.5625
+        }
+      }
+    }
+  ],
+  "optimization_plan": {
+    "optimization_goals": [
+      "Reduce matrix decomposition confidence from 0.700 to \u22650.850",
+      "Eliminate circular dependencies",
+      "Reduce module coupling",
+      "Balance module sizes"
+    ],
+    "steps": [
+      {
+        "action": "reduce_module_coupling",
+        "description": "Reduce coupling by extracting shared functionality to utility modules",
+        "priority": "high",
+        "estimated_time": "45-90 minutes"
+      },
+      {
+        "action": "balance_module_sizes",
+        "description": "Split large modules and consolidate small ones",
+        "priority": "medium",
+        "estimated_time": "30-60 minutes"
+      },
+      {
+        "action": "introduce_dependency_injection",
+        "description": "Use dependency injection to reduce hard-coded dependencies",
+        "priority": "medium",
+        "estimated_time": "30 minutes"
+      },
+      {
+        "action": "create_interface_modules",
+        "description": "Create interface modules to define clear boundaries",
+        "priority": "medium",
+        "estimated_time": "30 minutes"
+      },
+      {
+        "action": "add_dependency_validation",
+        "description": "Add dependency validation to prevent unwanted imports",
+        "priority": "low",
+        "estimated_time": "15 minutes"
+      }
+    ]
+  },
+  "matrix_decomposition_issue": {
+    "current_confidence": 0.7,
+    "target_confidence": 0.85,
+    "required_improvement": 0.15,
+    "key_factors": [
+      "Reduce dependency density",
+      "Eliminate circular dependencies",
+      "Create clear dependency hierarchy"
+    ]
+  }
+}

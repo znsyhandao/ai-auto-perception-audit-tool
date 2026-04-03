@@ -1,0 +1,183 @@
+{
+  "file": "\"./test_data\\test_problematic.py\"",
+  "analysis_time": "2026-03-30T10:56:06.375637",
+  "stats": {
+    "total_issues": 6,
+    "high_issues": 5,
+    "medium_issues": 0,
+    "low_issues": 1,
+    "tools_analyzed": 5,
+    "tools_failed": 0
+  },
+  "quality_assessment": {
+    "score": 48,
+    "level": "POOR",
+    "recommendation": "Code quality is poor. Significant improvements needed before production."
+  },
+  "summary": "[HIGH] 5 issues | [LOW] 1 issues",
+  "detailed_issues": [
+    {
+      "type": "PARSE_ERROR",
+      "message": "解析错误: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "ast"
+    },
+    {
+      "type": "PARSE_ERROR",
+      "message": "Parse error: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "control_flow"
+    },
+    {
+      "type": "PARSE_ERROR",
+      "message": "Failed to parse imports: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "third_party"
+    },
+    {
+      "type": "PARSE_ERROR",
+      "message": "Parse error: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "data_flow"
+    },
+    {
+      "type": "PARSE_ERROR",
+      "message": "Parse error: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+      "line": 0,
+      "severity": "HIGH",
+      "tool": "performance"
+    },
+    {
+      "type": "NO_IMPORTS",
+      "message": "No imports found in the file",
+      "line": 0,
+      "severity": "LOW",
+      "tool": "third_party"
+    }
+  ],
+  "tool_reports": {
+    "ast": {
+      "file": "\"./test_data\\test_problematic.py\"",
+      "stats": {
+        "total": 1,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "by_type": {
+          "PARSE_ERROR": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "PARSE_ERROR",
+          "message": "解析错误: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "ast"
+        }
+      ],
+      "summary": "[HIGH] Found 1 high-risk issues"
+    },
+    "control_flow": {
+      "file": "\"./test_data\\test_problematic.py\"",
+      "stats": {
+        "total": 1,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "by_type": {
+          "PARSE_ERROR": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "PARSE_ERROR",
+          "message": "Parse error: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "control_flow"
+        }
+      ],
+      "summary": "[HIGH] Found 1 high-risk control flow issues"
+    },
+    "third_party": {
+      "file": "\"./test_data\\test_problematic.py\"",
+      "imports": [],
+      "stats": {
+        "total": 2,
+        "high": 1,
+        "medium": 0,
+        "low": 1,
+        "by_type": {
+          "PARSE_ERROR": 1,
+          "NO_IMPORTS": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "PARSE_ERROR",
+          "message": "Failed to parse imports: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "third_party"
+        },
+        {
+          "type": "NO_IMPORTS",
+          "message": "No imports found in the file",
+          "line": 0,
+          "severity": "LOW",
+          "tool": "third_party"
+        }
+      ],
+      "summary": "[HIGH] Found 1 high-risk library issues | [LOW] Found 1 low-risk library issues"
+    },
+    "data_flow": {
+      "file": "\"./test_data\\test_problematic.py\"",
+      "stats": {
+        "total": 1,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "by_type": {
+          "PARSE_ERROR": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "PARSE_ERROR",
+          "message": "Parse error: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "data_flow"
+        }
+      ],
+      "summary": "[HIGH] Found 1 high-risk data flow issues"
+    },
+    "performance": {
+      "file": "\"./test_data\\test_problematic.py\"",
+      "stats": {
+        "total": 1,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "by_type": {
+          "PARSE_ERROR": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "PARSE_ERROR",
+          "message": "Parse error: [Errno 22] Invalid argument: '\"./test_data\\\\test_problematic.py\"'",
+          "line": 0,
+          "severity": "HIGH",
+          "tool": "performance"
+        }
+      ],
+      "summary": "[HIGH] Found 1 high-risk performance issues"
+    }
+  }
+}

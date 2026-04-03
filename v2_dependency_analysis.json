@@ -1,0 +1,170 @@
+{
+  "analysis_time": "2026-03-31T09:48:00Z",
+  "skill_path": "D:\\openclaw\\releases\\AISleepGen\\v1.0.9_optimized",
+  "metrics": {
+    "module_count": 30,
+    "dependency_count": 9,
+    "dependency_density": 0.01,
+    "avg_imports_per_module": 0.7,
+    "max_imports": 6,
+    "high_import_modules": [
+      {
+        "module": "skill",
+        "imports": 6,
+        "avg_ratio": 8.571428571428571
+      },
+      {
+        "module": "interfaces.sleep.sleep_interfaces",
+        "imports": 4,
+        "avg_ratio": 5.714285714285714
+      },
+      {
+        "module": "interfaces.stress.stress_interfaces",
+        "imports": 5,
+        "avg_ratio": 7.142857142857143
+      },
+      {
+        "module": "core.sleep_scorer.scorer",
+        "imports": 3,
+        "avg_ratio": 4.285714285714286
+      },
+      {
+        "module": "core.sleep_stager.stager",
+        "imports": 3,
+        "avg_ratio": 4.285714285714286
+      }
+    ],
+    "possible_cycles": [],
+    "current_confidence": 0.604,
+    "target_confidence": 0.85,
+    "required_density_reduction": {
+      "current_density": 0.01,
+      "target_density": 0.625,
+      "required_reduction": -0.615,
+      "current_dependencies": 9,
+      "target_dependencies": 562,
+      "dependencies_to_remove": 0,
+      "reduction_percentage": -6150.0
+    }
+  },
+  "optimization_plan": {
+    "optimization_goal": "Increase matrix decomposition confidence from 0.700 to ≥0.850",
+    "current_state": {
+      "module_count": 30,
+      "dependency_count": 9,
+      "dependency_density": 0.01,
+      "current_confidence": 0.604
+    },
+    "target_state": {
+      "target_confidence": 0.85,
+      "target_density": 0.625,
+      "target_dependencies": 562
+    },
+    "optimization_required": {
+      "dependencies_to_remove": 0,
+      "reduction_percentage": -6150.0
+    },
+    "optimization_strategies": [
+      {
+        "strategy": "reduce_unnecessary_imports",
+        "description": "Remove imports that are not actually used",
+        "target": "All modules",
+        "estimated_impact": "10-20% dependency reduction",
+        "priority": "high"
+      },
+      {
+        "strategy": "consolidate_common_imports",
+        "description": "Create shared utility modules for common imports",
+        "target": "High-import modules",
+        "estimated_impact": "15-25% dependency reduction",
+        "priority": "high"
+      },
+      {
+        "strategy": "optimize_interface_design",
+        "description": "Redesign interfaces to reduce coupling",
+        "target": "Interface modules",
+        "estimated_impact": "20-30% dependency reduction",
+        "priority": "medium"
+      },
+      {
+        "strategy": "break_circular_dependencies",
+        "description": "Eliminate circular dependencies",
+        "target": "Cyclic modules",
+        "estimated_impact": "5-15% dependency reduction",
+        "priority": "medium"
+      },
+      {
+        "strategy": "create_dependency_hierarchy",
+        "description": "Establish clear dependency direction",
+        "target": "All modules",
+        "estimated_impact": "10-20% dependency reduction",
+        "priority": "medium"
+      }
+    ],
+    "implementation_steps": [
+      {
+        "step": 1,
+        "action": "analyze_import_usage",
+        "description": "Identify which imports are actually used",
+        "time_estimate": "30 minutes"
+      },
+      {
+        "step": 2,
+        "action": "remove_unused_imports",
+        "description": "Delete imports that are not used",
+        "time_estimate": "45 minutes"
+      },
+      {
+        "step": 3,
+        "action": "consolidate_utilities",
+        "description": "Create shared utility modules",
+        "time_estimate": "60 minutes"
+      },
+      {
+        "step": 4,
+        "action": "redesign_interfaces",
+        "description": "Optimize interface dependencies",
+        "time_estimate": "90 minutes"
+      },
+      {
+        "step": 5,
+        "action": "verify_optimization",
+        "description": "Run mathematical audit to verify improvement",
+        "time_estimate": "30 minutes"
+      }
+    ],
+    "success_criteria": {
+      "primary": "Matrix decomposition confidence ≥ 0.850",
+      "secondary": [
+        "Dependency count reduced by ≥30%",
+        "No circular dependencies",
+        "Clear dependency hierarchy established"
+      ]
+    },
+    "targeted_optimizations": [
+      {
+        "module": "skill",
+        "current_imports": 6,
+        "target_imports": 3,
+        "strategy": "extract_shared_functionality"
+      },
+      {
+        "module": "interfaces.sleep.sleep_interfaces",
+        "current_imports": 4,
+        "target_imports": 2,
+        "strategy": "extract_shared_functionality"
+      },
+      {
+        "module": "interfaces.stress.stress_interfaces",
+        "current_imports": 5,
+        "target_imports": 2,
+        "strategy": "extract_shared_functionality"
+      }
+    ]
+  },
+  "principles_applied": [
+    "理解优先于通过 - 基于对矩阵分解算法的理解进行优化",
+    "针对性优化 - 专门针对依赖密度进行优化",
+    "透明规划 - 明确的优化目标和策略"
+  ]
+}

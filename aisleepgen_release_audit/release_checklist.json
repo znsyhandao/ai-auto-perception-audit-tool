@@ -1,0 +1,34 @@
+{
+  "skill": "AISleepGen",
+  "version": "v1.0.7",
+  "checks": [
+    {
+      "item": "Mathematical audit score > 75",
+      "status": "pending"
+    },
+    {
+      "item": "At least 3 certificates",
+      "status": "pending"
+    },
+    {
+      "item": "All 5 mathematical methods",
+      "status": "pending"
+    },
+    {
+      "item": "Code quality checks pass",
+      "status": "pending"
+    },
+    {
+      "item": "ClawHub compliance",
+      "status": "pending"
+    },
+    {
+      "item": "No prohibited files",
+      "status": "pending"
+    },
+    {
+      "item": "Documentation complete",
+      "status": "pending"
+    }
+  ]
+}

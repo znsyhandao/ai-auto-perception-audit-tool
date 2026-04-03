@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mathematical-audit-service:
+    build: ./microservices/mathematical-audit-service
+    ports:
+      - "8010:8010"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8010/health', timeout=2)"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    networks:
+      - audit-network
+
+networks:
+  audit-network:
+    driver: bridge
