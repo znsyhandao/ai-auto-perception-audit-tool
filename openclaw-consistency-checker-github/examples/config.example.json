@@ -1,0 +1,51 @@
+{
+  "level": "strict",
+  "autoFix": false,
+  "verbose": false,
+  "quiet": false,
+  "ignore": [
+    "node_modules",
+    "__pycache__",
+    "*.pyc",
+    "*.log",
+    ".git",
+    ".vscode",
+    ".idea"
+  ],
+  "fileTypes": [
+    ".yaml",
+    ".yml",
+    ".json",
+    ".md",
+    ".py",
+    ".js",
+    ".txt"
+  ],
+  "checks": {
+    "metadata": true,
+    "network": true,
+    "provenance": true,
+    "version": true,
+    "content": true
+  },
+  "rules": {
+    "versionConsistency": {
+      "enabled": true,
+      "strict": true
+    },
+    "nameConsistency": {
+      "enabled": true,
+      "caseSensitive": false
+    },
+    "contentContradictions": {
+      "enabled": true,
+      "checkReligious": true,
+      "checkNetwork": true,
+      "checkSecurity": true
+    },
+    "cacheFiles": {
+      "enabled": true,
+      "warnOnly": true
+    }
+  }
+}

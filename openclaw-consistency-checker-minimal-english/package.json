@@ -1,0 +1,48 @@
+{
+  "name": "@znsyhandao/openclaw-consistency-checker",
+  "version": "1.0.0",
+  "description": "OpenClaw plugin: Detect document-metadata inconsistencies and prevent ClawHub audit failures",
+  "main": "index.js",
+  "bin": {
+    "openclaw-consistency-checker": "./cli.js"
+  },
+  "scripts": {
+    "test": "node test_simple.js",
+    "check": "node cli.js .",
+    "lint": "echo 'Linting not configured'",
+    "format": "echo 'Formatting not configured'",
+    "release": "node scripts/simple_release.js"
+  },
+  "keywords": [
+    "openclaw",
+    "clawhub",
+    "plugin",
+    "consistency",
+    "audit",
+    "validation",
+    "metadata",
+    "documentation",
+    "quality",
+    "checker"
+  ],
+  "author": "OpenClaw Community",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "peerDependencies": {
+    "openclaw": ">=1.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/znsyhandao/openclaw-consistency-checker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/znsyhandao/openclaw-consistency-checker/issues"
+  },
+  "homepage": "https://github.com/znsyhandao/openclaw-consistency-checker#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
